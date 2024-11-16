@@ -31,7 +31,7 @@ public partial class Form1 : Form
         // creez instanta si caut substringurile.
         KeyWordFinder finder = new KeyWordFinder();
         
-        List<string> words = ["whatsapp", "instagram", "chrome", "settings", "background", "word", "excel", "powerpoint", "gallery", "brightness", "files", "pictures", "documents"];
+        List<string> words = ["whatsapp", "desktop", "instagram", "chrome", "settings", "background", "word", "excel", "powerpoint", "gallery", "brightness", "files", "pictures", "documents"];
 
         String keyword = finder.FindSubstring(input, words);
         
@@ -62,8 +62,16 @@ public partial class Form1 : Form
         }
         else if (keyword == "desktop")
         {
-            //string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            //String[] files = 
+            IEnumerable<FileInfo> list = new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory)).GetFiles()
+                .Concat(new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.CommonDesktopDirectory)).GetFiles());
+
+            foreach (var file in list)
+            {
+                if (input.Contains(file.Name))
+                {
+                    Console.WriteLine(file.Name);
+                }
+            }
             //keyword = finder.FindSubstring(input, words);
         }
         

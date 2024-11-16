@@ -7,7 +7,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a4a3b25d-c75b-4f66-95c7-38181da09987" name="Changes" comment="" />
+    <list default="true" id="a4a3b25d-c75b-4f66-95c7-38181da09987" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Cyberhack/Form1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/Form1.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cyberhack/bin/Debug/net9.0-windows/Cyberhack.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/bin/Debug/net9.0-windows/Cyberhack.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cyberhack/bin/Debug/net9.0-windows/Cyberhack.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/bin/Debug/net9.0-windows/Cyberhack.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cyberhack/bin/Debug/net9.0-windows/Cyberhack.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/bin/Debug/net9.0-windows/Cyberhack.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/apphost.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/ref/Cyberhack.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/ref/Cyberhack.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/refint/Cyberhack.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/refint/Cyberhack.dll" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
