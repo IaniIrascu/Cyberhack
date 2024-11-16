@@ -29,41 +29,42 @@ partial class Form1
     /// </summary>
     private void InitializeComponent()
     {
+        process1 = new System.Diagnostics.Process();
         button1 = new System.Windows.Forms.Button();
-        checkedListBox1 = new System.Windows.Forms.CheckedListBox();
         SuspendLayout();
+        // 
+        // process1
+        // 
+        process1.StartInfo.Domain = "";
+        process1.StartInfo.LoadUserProfile = false;
+        process1.StartInfo.UseCredentialsForNetworkingOnly = false;
+        process1.StartInfo.UserName = "";
+        process1.StartInfo.UseShellExecute = false;
+        process1.SynchronizingObject = this;
         // 
         // button1
         // 
-        button1.Location = new System.Drawing.Point(418, 154);
+        button1.Location = new System.Drawing.Point(61, 53);
         button1.Name = "button1";
-        button1.Size = new System.Drawing.Size(119, 88);
+        button1.Size = new System.Drawing.Size(263, 68);
         button1.TabIndex = 0;
         button1.Text = "button1";
         button1.UseVisualStyleBackColor = true;
-        // 
-        // checkedListBox1
-        // 
-        checkedListBox1.FormattingEnabled = true;
-        checkedListBox1.Location = new System.Drawing.Point(122, 175);
-        checkedListBox1.Name = "checkedListBox1";
-        checkedListBox1.Size = new System.Drawing.Size(170, 32);
-        checkedListBox1.TabIndex = 1;
+        button1.Click += button1_Click;
         // 
         // Form1
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         ClientSize = new System.Drawing.Size(800, 450);
-        Controls.Add(checkedListBox1);
         Controls.Add(button1);
         Text = "Form1";
         ResumeLayout(false);
     }
 
-    private System.Windows.Forms.CheckedListBox checkedListBox1;
-
     private System.Windows.Forms.Button button1;
+
+    private System.Diagnostics.Process process1;
 
     #endregion
 }

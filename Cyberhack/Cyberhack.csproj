@@ -8,4 +8,18 @@
         <ImplicitUsings>enable</ImplicitUsings>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="System.Management" Version="9.0.0" />
+      <PackageReference Include="System.Management.Automation" Version="7.5.0-rc.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="SilentInstallation.cs">
+        <DependentUpon>Form1.cs</DependentUpon>
+      </Compile>
+      <Compile Update="Installer.cs">
+        <DependentUpon>Form1.cs</DependentUpon>
+      </Compile>
+    </ItemGroup>
+
 </Project>
