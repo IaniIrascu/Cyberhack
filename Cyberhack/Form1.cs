@@ -62,9 +62,9 @@ public partial class Form1 : Form
         }
         else if (keyword == "desktop")
         {
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            String[] files = 
-            keyword = finder.FindSubstring(input, words);
+            //string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            //String[] files = 
+            //keyword = finder.FindSubstring(input, words);
         }
         
         // we have the keyword that the user type.
