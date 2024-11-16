@@ -15,12 +15,6 @@ public partial class Form1 : Form
     {
         throw new System.NotImplementedException();
     }
-
-    private void bindingSource1_CurrentChanged(object sender, EventArgs e)
-    {
-        throw new System.NotImplementedException();
-    }
-
     private void button1_Click(object sender, EventArgs e)
     {
         string input = textBox2.Text;
@@ -31,7 +25,7 @@ public partial class Form1 : Form
         // creez instanta si caut substringurile.
         KeyWordFinder finder = new KeyWordFinder();
         
-        List<string> words = ["whatsapp", "desktop", "instagram", "chrome", "settings", "background", "word", "excel", "powerpoint", "gallery", "brightness", "files", "pictures", "documents"];
+        List<string> words = ["whatsapp", "desktop", "instagram", "chrome", "settings", "background", "word", "excel", "powerpoint", "gallery", "brightness", "files", "pictures", "documents", "mail"];
 
         String keyword = finder.FindSubstring(input, words);
         
@@ -73,6 +67,16 @@ public partial class Form1 : Form
                 }
             }
             //keyword = finder.FindSubstring(input, words);
+        }
+
+        if (keyword == "mail")
+        {
+            // Lansez aplicatia de mail.
+            Process processMail = new Process();
+            processMail.StartInfo.FileName = "mailto:";
+            // Fara aceasta linie nu mi ar fi recunoscut pathul.
+            processMail.StartInfo.UseShellExecute = true;
+            processMail.Start();
         }
         
         // we have the keyword that the user type.
