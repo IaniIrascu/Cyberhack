@@ -14,7 +14,6 @@ public class Installer
     {
         this.program = program;
     }
-
     public void Install() 
     {
         if (this.program == "chrome" || this.program == "google")
@@ -42,7 +41,6 @@ public class Installer
             }
             return;
         }
-
         if (this.program == "whatsapp")
         {
             const string whatsappInstallerUrl = "https://get.microsoft.com/installer/download/9NKSQGP7F2NH?cid=website_cta_psi";
@@ -68,32 +66,55 @@ public class Installer
 
             return;
         }
-
-        if (this.program == "facebook")
+        if (this.program == "spotify")
         {
-            const string facebookInstallerUrl = "https://get.microsoft.com/installer/download/9WZDNCRFJ2WL?cid=website_cta_psi";
-            const string installerPath = @"C:\Temp\FacebookInstaller.exe";
+            const string spotifyInstallerUrl = "https://download.scdn.co/SpotifySetup.exe";
+            const string installerPath = @"C:\Temp\SpotifyInstaller.exe";
             try
             {
-                Console.WriteLine("Downloading WhatsApp installer...");
+                Console.WriteLine("Downloading Spotify installer...");
                 using (WebClient client = new WebClient())
                 {
                     Directory.CreateDirectory(Path.GetDirectoryName(installerPath));
-                    client.DownloadFile(facebookInstallerUrl, installerPath);
+                    client.DownloadFile(spotifyInstallerUrl, installerPath);
                 }
                 Console.WriteLine("Download completed!");
-                
+        
                 Console.WriteLine("Installing application...");
-                InstallFromExe(installerPath, "/quiet /norestart");
+                InstallFromExe(installerPath, "/silent /norestart");
                 Console.WriteLine("Application installation completed successfully!");
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Installation failed: {ex.Message}");
             }
-
             return;
         }
+        if (this.program == "zoom")
+        {
+            const string zoomInstallerUrl = "https://zoom.us/client/6.2.7.49583/ZoomInstallerFull.exe?archType=x64\n";
+            const string installerPath = @"C:\Temp\ZoomInstaller.exe";
+            try
+            {
+                Console.WriteLine("Downloading Zoom installer...");
+                using (WebClient client = new WebClient())
+                {
+                    Directory.CreateDirectory(Path.GetDirectoryName(installerPath));
+                    client.DownloadFile(zoomInstallerUrl, installerPath);
+                }
+                Console.WriteLine("Download completed!");
+        
+                Console.WriteLine("Installing application...");
+                InstallFromExe(installerPath, "/silent /norestart");
+                Console.WriteLine("Application installation completed successfully!");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Installation failed: {ex.Message}");
+            }
+            return;
+        }
+        
     }
     
 }

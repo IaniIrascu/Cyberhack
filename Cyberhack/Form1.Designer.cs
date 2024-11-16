@@ -11,15 +11,6 @@ partial class Form1
     ///  Clean up any resources being used.
     /// </summary>
     /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-    protected override void Dispose(bool disposing)
-    {
-        if (disposing && (components != null))
-        {
-            components.Dispose();
-        }
-
-        base.Dispose(disposing);
-    }
 
     #region Windows Form Designer generated code
 
@@ -33,14 +24,13 @@ partial class Form1
         textBox1 = new System.Windows.Forms.TextBox();
         button2 = new System.Windows.Forms.Button();
         button3 = new System.Windows.Forms.Button();
-
         label1 = new System.Windows.Forms.Label();
-
         SuspendLayout();
         // 
         // button1
         // 
         button1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+        button1.Font = new System.Drawing.Font("Georgia", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)0));
         button1.Location = new System.Drawing.Point(580, 188);
         button1.Name = "button1";
         button1.Size = new System.Drawing.Size(179, 45);
@@ -52,15 +42,18 @@ partial class Form1
         // textBox1
         // 
         textBox1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+        textBox1.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)0));
         textBox1.Location = new System.Drawing.Point(65, 330);
+        textBox1.Multiline = true;
         textBox1.Name = "textBox1";
-        textBox1.Size = new System.Drawing.Size(471, 27);
+        textBox1.Size = new System.Drawing.Size(471, 45);
         textBox1.TabIndex = 3;
         textBox1.TextChanged += textBox1_TextChanged;
         // 
         // button2
         // 
         button2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+        button2.Font = new System.Drawing.Font("Georgia", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)0));
         button2.Location = new System.Drawing.Point(65, 188);
         button2.Name = "button2";
         button2.Size = new System.Drawing.Size(179, 45);
@@ -77,7 +70,6 @@ partial class Form1
         button3.Size = new System.Drawing.Size(179, 45);
         button3.TabIndex = 5;
         button3.Text = "Search";
-
         button3.UseVisualStyleBackColor = false;
         button3.Click += button3_Click;
         // 
@@ -95,15 +87,14 @@ partial class Form1
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+        BackColor = System.Drawing.SystemColors.Control;
         ClientSize = new System.Drawing.Size(800, 450);
-      
         Controls.Add(label1);
         Controls.Add(button3);
         Controls.Add(button2);
         Controls.Add(textBox1);
         Controls.Add(button1);
         Margin = new System.Windows.Forms.Padding(2);
-
         Text = "MyConfig";
         ResumeLayout(false);
         PerformLayout();
