@@ -29,9 +29,11 @@ partial class Form1
     /// </summary>
     private void InitializeComponent()
     {
-        process1 = new System.Diagnostics.Process();
+        components = new System.ComponentModel.Container();
         button1 = new System.Windows.Forms.Button();
-        button2 = new System.Windows.Forms.Button();
+        bindingSource1 = new System.Windows.Forms.BindingSource(components);
+        textBox2 = new System.Windows.Forms.TextBox();
+        ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
         SuspendLayout();
         // 
         // process1
@@ -45,7 +47,7 @@ partial class Form1
         // 
         // button1
         // 
-        button1.Location = new System.Drawing.Point(61, 53);
+        button1.Location = new System.Drawing.Point(311, 73);
         button1.Name = "button1";
         button1.Size = new System.Drawing.Size(263, 68);
         button1.TabIndex = 0;
@@ -53,28 +55,34 @@ partial class Form1
         button1.UseVisualStyleBackColor = true;
         button1.Click += button1_Click;
         // 
-        // button2
+        // bindingSource1
         // 
-        button2.Location = new System.Drawing.Point(449, 61);
-        button2.Name = "button2";
-        button2.Size = new System.Drawing.Size(227, 59);
-        button2.TabIndex = 1;
-        button2.Text = "button2";
-        button2.UseVisualStyleBackColor = true;
-        button2.Click += button2_Click;
+        bindingSource1.CurrentChanged += bindingSource1_CurrentChanged;
+        // 
+        // textBox2
+        // 
+        textBox2.Location = new System.Drawing.Point(244, 200);
+        textBox2.Name = "textBox2";
+        textBox2.Size = new System.Drawing.Size(251, 27);
+        textBox2.TabIndex = 3;
         // 
         // Form1
         // 
-        AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+        AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         ClientSize = new System.Drawing.Size(800, 450);
-        Controls.Add(button2);
+        Controls.Add(textBox2);
         Controls.Add(button1);
+        Margin = new System.Windows.Forms.Padding(2);
         Text = "Form1";
+        ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
         ResumeLayout(false);
+        PerformLayout();
     }
 
-    private System.Windows.Forms.Button button2;
+    private System.Windows.Forms.TextBox textBox2;
+
+    private System.Windows.Forms.BindingSource bindingSource1;
 
     private System.Windows.Forms.Button button1;
 
