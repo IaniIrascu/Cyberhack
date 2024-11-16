@@ -1,11 +1,16 @@
-namespace Cyberhack;
-static class Program
-{
+using System.Windows.Forms.Design;
 
-    [STAThread]
-    static void Main()
+namespace Cyberhack
+{
+    static class Program
     {
-        ApplicationConfiguration.Initialize();
-        Application.Run(new Form1());
+        [STAThread]
+        static void Main()
+        {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new CustomApplicationContext());
+        }
     }
 }
+
