@@ -51,7 +51,10 @@ public partial class Form1 : Form
 {
     private void Form1_KeyDown(object sender, KeyEventArgs e) 
     {
-        if (e.KeyCode == Keys.Enter){
+        if (e.KeyCode == Keys.Enter)
+        {
+            textBox2.Focus();
+            button1.Focus();
             button1_Click(sender, e);
         }
     }
@@ -83,14 +86,14 @@ public partial class Form1 : Form
         // creez instanta si caut substringurile.
         KeyWordFinder finder = new KeyWordFinder();
         
-        List<string> words = ["whatsapp", "desktop", "instagram", "chrome", "settings", "background", "word", "excel", "powerpoint", "gallery", "brightness", "files", "pictures", "documents"];
+        List<string> words = ["whatsapp", "desktop", "instagram", "chrome", "settings", "setting", "set", "change", "background", "word", "excel", "powerpoint", "gallery", "brightness", "files", "pictures", "documents"];
 
         String keyword = finder.FindSubstring(input.ToLower(), words);
         
         // Cautare keyword principal
         
         
-        if (keyword == "settings")
+        if (keyword == "settings" || keyword == "setting" || keyword == "set" || keyword == "change")
         {
             List<String> listaSetari = ["display", "camera", "keyboard", "language", "recovery",
                 "taskbar", "nightlight", "about", "sound", "apps-volume",
@@ -116,17 +119,38 @@ public partial class Form1 : Form
         else if (keyword == "desktop")
         {
             IEnumerable<FileInfo> list = new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory)).GetFiles()
-                .Concat(new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.CommonDesktopDirectory)).GetFiles());
+                .Concat(new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.CommonDesktopDirectory)).GetFiles()).Distinct();
+            string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             
+            Console.WriteLine(input);
             foreach (var file in list)
             {
-                if (input.Contains(file.Name))
+                String filename = file.Name.ToLower();
+                String nameWithoutExt = Path.GetFileNameWithoutExtension(filename);
+                try
                 {
-                    Process process = new Process();
-                    process.StartInfo.FileName = "C:\\Users\\canta\\Desktop\\" + file.Name;
-                    process.StartInfo.UseShellExecute = true;
-                    process.Start();
-                    break;
+                    if (input.Contains("\"" + filename + "\""))
+                    {
+                        Process process = new Process();
+                        process.StartInfo.FileName = desktopPath + "\\" + file.Name;
+                        process.StartInfo.UseShellExecute = true;
+                        process.Start();
+                        break;
+                    }
+                    else if (input.Contains("\"" + nameWithoutExt + "\"") &&
+                             nameWithoutExt == Path.GetFileNameWithoutExtension(file.Name).ToLower())
+                    {
+                        Process process = new Process();
+                        process.StartInfo.FileName = "\"" + desktopPath + "\\" + file.Name + "\"";
+                        Console.WriteLine(process.StartInfo.FileName);
+                        process.StartInfo.UseShellExecute = true;
+                        process.Start();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Log or handle the error if needed
+                    Console.WriteLine($"Error starting process for file {file.Name}");
                 }
             }
         }
