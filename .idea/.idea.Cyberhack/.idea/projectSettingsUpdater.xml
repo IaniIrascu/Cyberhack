@@ -1,7 +1,16 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="RiderProjectSettingsUpdater">
     <option name="singleClickDiffPreview" value="1" />
     <option name="vcsConfiguration" value="3" />
   </component>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="RiderProjectSettingsUpdater">
+    <option name="singleClickDiffPreview" value="1" />
+    <option name="vcsConfiguration" value="3" />
+  </component>
+>>>>>>> 2911b4bf0623b55d8cd68f7062501af668ca477c
 </project>
