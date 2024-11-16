@@ -99,6 +99,15 @@ public partial class Form1 : Form
         {
             
         }
+        if (keyword == "mail")
+        {
+            // Lansez aplicatia de mail.
+            Process processMail = new Process();
+            processMail.StartInfo.FileName = "mailto:";
+            // Fara aceasta linie nu mi ar fi recunoscut pathul.
+            processMail.StartInfo.UseShellExecute = true;
+            processMail.Start();
+        }
     }
     
 }
