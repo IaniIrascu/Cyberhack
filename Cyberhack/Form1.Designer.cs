@@ -11,15 +11,6 @@ partial class Form1
     ///  Clean up any resources being used.
     /// </summary>
     /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-    protected override void Dispose(bool disposing)
-    {
-        if (disposing && (components != null))
-        {
-            components.Dispose();
-        }
-
-        base.Dispose(disposing);
-    }
 
     #region Windows Form Designer generated code
 
@@ -34,6 +25,7 @@ partial class Form1
         textBox1 = new System.Windows.Forms.TextBox();
         button2 = new System.Windows.Forms.Button();
         button3 = new System.Windows.Forms.Button();
+
         button4 = new System.Windows.Forms.Button();
         button5 = new System.Windows.Forms.Button();
         SuspendLayout();
@@ -62,6 +54,7 @@ partial class Form1
         // button2
         // 
         button2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+
         button2.Location = new System.Drawing.Point(585, 108);
         button2.Name = "button2";
         button2.Size = new System.Drawing.Size(183, 56);
@@ -105,6 +98,7 @@ partial class Form1
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+
         ClientSize = new System.Drawing.Size(804, 459);
         Controls.Add(button5);
         Controls.Add(button4);
