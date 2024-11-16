@@ -4,16 +4,16 @@ namespace Cyberhack;
 using static Cyberhack.Form1;
 public class KeyWordFinder
 {
-    private List<string> _keyWords = ["chrome", "settings", "setting", "background"];
-    public Boolean FindSubstring(String input)
+    private List<string> _keyWords = ["whatsapp", "instagram", "chrome", "settings", "background", "word", "excel", "powerpoint", "gallery", "brightness", "files", "pictures", "documents"];
+    public String FindSubstring(String input)
     {
         foreach (String keyWord in _keyWords)
         {
             if (input.Contains(keyWord))
             {
-                return true;
+                return keyWord;
             }
         }
-        return false;
+        return null;
     }
 }

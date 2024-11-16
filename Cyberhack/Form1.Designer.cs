@@ -44,6 +44,7 @@ partial class Form1
         button1.TabIndex = 0;
         button1.Text = "button1";
         button1.UseVisualStyleBackColor = true;
+        button1.Click += button1_Click;
         // 
         // bindingSource1
         // 
@@ -55,7 +56,6 @@ partial class Form1
         textBox2.Name = "textBox2";
         textBox2.Size = new System.Drawing.Size(251, 27);
         textBox2.TabIndex = 3;
-        textBox2.TextChanged += textBox2_TextChanged;
         // 
         // Form1
         // 
