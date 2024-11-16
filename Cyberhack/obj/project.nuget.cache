@@ -1,6 +1,5 @@
 {
   "version": 2,
-<<<<<<< HEAD
   "dgSpecHash": "Ia5do3iD/n0=",
   "success": true,
   "projectFilePath": "C:\\Users\\iiras\\RiderProjects\\Cyberhack\\Cyberhack\\Cyberhack.csproj",
@@ -28,11 +27,12 @@
     "C:\\Users\\iiras\\.nuget\\packages\\system.text.encoding.codepages\\9.0.0\\system.text.encoding.codepages.9.0.0.nupkg.sha512",
     "C:\\Users\\iiras\\.nuget\\packages\\system.windows.extensions\\9.0.0\\system.windows.extensions.9.0.0.nupkg.sha512"
   ],
-=======
-  "dgSpecHash": "Km+9NmKDV9A=",
-  "success": true,
-  "projectFilePath": "C:\\Users\\canta\\RiderProjects\\Cyberhack\\Cyberhack\\Cyberhack.csproj",
-  "expectedPackageFiles": [],
->>>>>>> main
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\iiras\\RiderProjects\\Cyberhack\\Cyberhack\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
