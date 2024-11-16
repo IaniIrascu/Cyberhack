@@ -33,7 +33,9 @@ partial class Form1
         textBox1 = new System.Windows.Forms.TextBox();
         button2 = new System.Windows.Forms.Button();
         button3 = new System.Windows.Forms.Button();
+
         label1 = new System.Windows.Forms.Label();
+
         SuspendLayout();
         // 
         // button1
@@ -75,6 +77,7 @@ partial class Form1
         button3.Size = new System.Drawing.Size(179, 45);
         button3.TabIndex = 5;
         button3.Text = "Search";
+
         button3.UseVisualStyleBackColor = false;
         button3.Click += button3_Click;
         // 
@@ -90,15 +93,17 @@ partial class Form1
         // 
         // Form1
         // 
-        AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+        AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         ClientSize = new System.Drawing.Size(800, 450);
+      
         Controls.Add(label1);
         Controls.Add(button3);
         Controls.Add(button2);
         Controls.Add(textBox1);
         Controls.Add(button1);
         Margin = new System.Windows.Forms.Padding(2);
+
         Text = "MyConfig";
         ResumeLayout(false);
         PerformLayout();
@@ -113,5 +118,6 @@ partial class Form1
     private System.Windows.Forms.TextBox textBox1;
     
     private System.Windows.Forms.Button button1;
+
     #endregion
 }
