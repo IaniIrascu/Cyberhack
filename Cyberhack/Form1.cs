@@ -78,7 +78,6 @@ public partial class Form1 : Form
             processMail.StartInfo.UseShellExecute = true;
             processMail.Start();
         }
-        
         // we have the keyword that the user type.
         // and now we apply the handlefunction for that keyword, keyword.
     }
