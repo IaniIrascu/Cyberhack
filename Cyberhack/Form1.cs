@@ -1,55 +1,16 @@
-using Google.Apis.Services;
-using Google.Apis.Translate.v2;
-using Google.Apis.Translate.v2.Data;
-using IronPython.Modules;
-
-namespace Cyberhack;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Diagnostics;
+using Microsoft.Win32;
 using static Cyberhack.KeyWordFinder;
-using Google.Apis.Auth.OAuth2;
 using System.Speech.Synthesis;
 using System.Threading;
 
-/*namespace GoogleTranslate
-{ 
-    public class GoogleTranslate
-    {
-        private readonly UserCredential _credential;
-        public GoogleTranslate(UserCredential credential)
-        {
-            _credential = credential;
-        }
 
-        public string TranslateText(string text, string inputLanguage, string targetLanguage)
-        {
-            if (string.IsNullOrWhiteSpace(text))
-                throw new ArgumentNullException(nameof(text));
-            if (string.IsNullOrWhiteSpace(text))
-                throw new ArgumentNullException(nameof(inputLanguage));
-            if (string.IsNullOrWhiteSpace(text))
-                throw new ArgumentNullException(nameof(targetLanguage));
 
-            using (var translateService = new TranslateService(new BaseClientService.Initializer()
-                       { HttpClientInitializer = _credential }))
-            {
-                var translateRequest = translateService.Translations.Translate(new TranslateTextRequest()
-                {
-                    Q = new List<string> { text },
-                    Source = inputLanguage,
-                    Target = targetLanguage,
-                    Format = "text"
-                });
-                
-                var responce = translateRequest.Execute();
-                return responce.Translations.First().TranslatedText;
-            }
-        }
-    }
-}
-*/
+namespace Cyberhack;
+
 public partial class Form1 : Form
 {
     private String _keyword = null;
@@ -57,61 +18,79 @@ public partial class Form1 : Form
     private System.Windows.Forms.Timer waitTimer;
     private bool askedQuestion = false;
     SpeechSynthesizer synthesizer = new SpeechSynthesizer();
-    
+
     private void CustomizeUI()
     {
-        // Set modern font
-        Font modernFont = new Font("Segoe UI", 10, FontStyle.Regular);
-        // Style Button1 (Brighter)
-        
-        
-        label1.Font = modernFont;
-        label1.BackColor = Color.Black;
-        label1.FlatStyle = FlatStyle.Flat;
-        
-        label1.ForeColor = Color.White;
-        label1.TextAlign = ContentAlignment.MiddleCenter;
-        label1.Text = "Welcome to my Config";
-        
-        button1.Font = modernFont;
-        button1.BackColor = Color.LightBlue;
-        button1.FlatStyle = FlatStyle.Flat;
-        button1.FlatAppearance.BorderSize = 0;
-        button1.ForeColor = Color.White;
-        button1.TextAlign = ContentAlignment.MiddleCenter;
-        button1.Text = "Brighter ☀";
+            // Set modern font
+            Font modernFont = new Font("Confort", 12, FontStyle.Regular);
 
-        // Style Button2 (Dimmer)
-        button2.Font = modernFont;
-        button2.BackColor = Color.CornflowerBlue;
-        button2.FlatStyle = FlatStyle.Flat;
-        button2.FlatAppearance.BorderSize = 0;
-        button2.ForeColor = Color.White;
-        button2.TextAlign = ContentAlignment.MiddleCenter;
-        button2.Text = "Dimmer 🌙";
+            // Style Button1 (Brighter)
 
-        // Style Button3 (Search)
-        button3.Font = modernFont;
-        button3.BackColor = Color.MediumSlateBlue;
-        button3.FlatStyle = FlatStyle.Flat;
-        button3.FlatAppearance.BorderSize = 0;
-        button3.ForeColor = Color.White;
-        button3.TextAlign = ContentAlignment.MiddleCenter;
-        button3.Text = "Search 🔍";
 
-        // Style TextBox1 (Input)
-        textBox1.Font = modernFont;
-        textBox1.BackColor = Color.WhiteSmoke;
-        textBox1.ForeColor = Color.Gray;
-        textBox1.Text = "Type your query here...";
-        textBox1.GotFocus += RemovePlaceholderText;
-        textBox1.LostFocus += AddPlaceholderText;
+            button1.Font = modernFont;
+            button1.BackColor = Color.LightBlue;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.ForeColor = Color.White;
+            button1.TextAlign = ContentAlignment.MiddleCenter;
+            button1.Text = "Brighter ☀";
+
+            // Style Button2 (Dimmer)
+            button2.Font = modernFont;
+            button2.BackColor = Color.CornflowerBlue;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.ForeColor = Color.White;
+            button2.TextAlign = ContentAlignment.MiddleCenter;
+            button2.Text = "Dimmer 🌙";
+
+            // Style Button3 (Search)
+            button3.Font = modernFont;
+            button3.BackColor = Color.MediumSlateBlue;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.FlatAppearance.BorderSize = 0;
+            button3.ForeColor = Color.White;
+            button3.TextAlign = ContentAlignment.MiddleCenter;
+            button3.Text = "Search 🔍";
+            
+            button4.Font = modernFont;
+            button4.BackColor = Color.Red;
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.FlatAppearance.BorderSize = 0;
+            button4.ForeColor = Color.White;
+            button4.TextAlign = ContentAlignment.MiddleCenter;
+            button4.Text = "No ❌";
+            
+            button5.Font = modernFont;
+            button5.BackColor = Color.YellowGreen;
+            button5.FlatStyle = FlatStyle.Flat;
+            button5.FlatAppearance.BorderSize = 0;
+            button5.ForeColor = Color.White;
+            button5.TextAlign = ContentAlignment.MiddleCenter;
+            button5.Text = "Yes ✅";
+            
+
+            // Style TextBox1 (Input)
+            textBox1.Font = modernFont;
+            textBox1.BackColor = Color.WhiteSmoke;
+            textBox1.ForeColor = Color.Gray;
+            textBox1.Text = "Welcome to myConfig. Type your query here...";
+            textBox1.GotFocus += RemovePlaceholderText;
+            textBox1.LostFocus += AddPlaceholderText;
+            
+            button1.Anchor = AnchorStyles.None;
+            button2.Anchor = AnchorStyles.None;
+            button3.Anchor = AnchorStyles.None;
+            textBox1.Anchor = AnchorStyles.None;
+            button4.Anchor = AnchorStyles.None;
+            button5.Anchor = AnchorStyles.None;
+            
+        }
         
         button1.Anchor = AnchorStyles.None;
         button2.Anchor = AnchorStyles.None;
         button3.Anchor = AnchorStyles.None;
         textBox1.Anchor = AnchorStyles.None;
-        label1.Anchor = AnchorStyles.None;
     }
     
     /*
@@ -128,7 +107,7 @@ public partial class Form1 : Form
     // Placeholder handling for the text box
     private void RemovePlaceholderText(object sender, EventArgs e)
     {
-        if (textBox1.Text == "Type your query here...")
+        if (textBox1.Text == "Welcome to myConfig. Type your query here...")
         {
             textBox1.Text = "";
             textBox1.ForeColor = Color.Black;
@@ -139,11 +118,11 @@ public partial class Form1 : Form
     {
         if (string.IsNullOrWhiteSpace(textBox1.Text))
         {
-            textBox1.Text = "Type your query here... ";
+            textBox1.Text = "Welcome to myConfig. Type your query here... ";
             textBox1.ForeColor = Color.Gray;
         }
     }
-
+    
     private void Form1_KeyDown(object sender, KeyEventArgs e) 
     {
         if (e.KeyCode == Keys.Enter)
@@ -154,7 +133,6 @@ public partial class Form1 : Form
         }
     }
     
-    private static UserCredential Login;
     public Form1()
     {
         InitializeComponent();
@@ -166,29 +144,31 @@ public partial class Form1 : Form
         throw new System.NotImplementedException();
     }
 
-    private void bindingSource1_CurrentChanged(object sender, EventArgs e)
+    private void button1_Click(object sender, EventArgs e)
     {
-        throw new System.NotImplementedException();
+        WindowsSettingsBrightnessController.Set(WindowsSettingsBrightnessController.Get() + 10);
+    }
+    
+    private void button2_Click(object sender, EventArgs e)
+    {
+        WindowsSettingsBrightnessController.Set(WindowsSettingsBrightnessController.Get() - 10);
     }
 
     private void button3_Click(object sender, EventArgs e)
     {
         synthesizer.Volume = 100;
-        //string workingDirectory = Environment.CurrentDirectory;
-        //string projectDirectory = Directory.GetParent(workingDirectory).Parent.Parent.FullName;
-        //Console.WriteLine(projectDirectory);
-        //System.Media.SoundPlayer player = new System.Media.SoundPlayer(projectDirectory + "\\file_example_WAV_1MG.wav");
-        //player.Play();
-        WindowsSettingsBrightnessController.Set(100);
         string input = textBox1.Text.ToLower();
-        // if(e.KeyCode==Keys.Enter)
-        //     buttonSearch_Click(sender,e);
-            // preiau textul din TextBox.
 
         // creez instanta si caut substringurile.
         KeyWordFinder finder = new KeyWordFinder();
-        
-        List<string> words = ["settings", "desktop", "brightness", "brighter", "bright", "dimmer", "sound", "speaker"];
+        List<string> words =
+        [
+            "whatsapp", "facebook", "desktop", "instagram", "chrome", "settings",
+            "setting", "set", "change", "background", "word", "excel", "powerpoint", "gallery",
+            "brightness", "files", "pictures", "documents", "spotify", "music", "internet",
+            "youtube", "zoom", "chatgpt"];
+        ];
+        String keyword = finder.FindSubstring(input.ToLower(), words);
         
         // Cautare keyword principal
         List<string> brightnessKeywords = ["brightness", "brighter", "dimmer", "bright"];
@@ -238,19 +218,15 @@ public partial class Form1 : Form
             waitTimer.Interval = 100;  // Check every 100 milliseconds
             waitTimer.Tick += WaitForButtonClick;
         }
-        /*
-         * List<String> listaSetari = ["display", "keyboard", "recovery",
-                "taskbar", "nightlight", "about", "sound", "apps-volume",
-                "printers"];
-         */
-        
+     
         List<string> settingsKeywords = ["settings", "setting", "set", "change", "desktop", "search"];
         keyword = finder.FindSubstring(input.ToLower(), settingsKeywords);
         if (keyword == "settings" || keyword == "setting" || keyword == "set" || keyword == "change")
         {
             synthesizer.Speak("Try to be more specific about what you want to change. For ex: too bright to change the brightness");
+            return;
         }
-        else if (keyword == "desktop" || keyword == "search")
+        if (keyword == "desktop" || keyword == "search")
         {
             IEnumerable<FileInfo> list = new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory)).GetFiles()
                 .Concat(new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.CommonDesktopDirectory)).GetFiles()).Distinct();
@@ -271,7 +247,8 @@ public partial class Form1 : Form
                         process.Start();
                         break;
                     }
-                    else if (input.Contains("\"" + nameWithoutExt + "\"") &&
+                    else 
+                    if (input.Contains("\"" + nameWithoutExt + "\"") &&
                              nameWithoutExt == Path.GetFileNameWithoutExtension(file.Name).ToLower())
                     {
                         Process process = new Process();
@@ -287,11 +264,54 @@ public partial class Form1 : Form
                     Console.WriteLine($"Error starting process for file {file.Name}");
                 }
             }
+
+            return;
         }
-        
-        // we have the keyword that the user type.
-        // and now we apply the handlefunction for that keyword, keyword.
-    }
+
+        if (keyword == "brightness")
+        {
+            
+        }
+        if (keyword == "mail")
+        {
+            // Lansez aplicatia de mail.
+            Process processMail = new Process();
+            processMail.StartInfo.FileName = "mailto:";
+            // Fara aceasta linie nu mi ar fi recunoscut pathul.
+            processMail.StartInfo.UseShellExecute = true;
+            processMail.Start();
+            return;
+        }
+
+        if (keyword == "chrome" || keyword == "google" || keyword == "internet")
+        {
+            const string appPath = @"C:\Program Files\Google\Chrome\Application\chrome.exe";
+            try
+            {
+                Process processChrome = new Process();
+                processChrome.StartInfo.FileName = appPath;
+                processChrome.StartInfo.UseShellExecute = true;
+                processChrome.Start();
+            }
+            catch
+            {
+                Console.WriteLine($"Error starting chrome process");
+                Installer chrome = new Installer("chrome");
+                chrome.Install();
+                try
+                {
+                    Process processChrome = new Process();
+                    processChrome.StartInfo.FileName = appPath;
+                    processChrome.StartInfo.UseShellExecute = true;
+                    processChrome.Start();
+                }
+                catch
+                {
+                    Console.WriteLine($"Error starting chrome process");
+                }
+            }
+            return;
+        }
 
     private void button1_Click(object sender, EventArgs e)
     {  
@@ -300,6 +320,148 @@ public partial class Form1 : Form
     private void button2_Click(object sender, EventArgs e)
     {
         WindowsSettingsBrightnessController.Set(WindowsSettingsBrightnessController.Get() - 10);
+        if (keyword == "facebook")
+        {            
+            const string chromePath = @"C:\Program Files\Google\Chrome\Application\chrome.exe";
+            const string facebookUrl = "https://www.facebook.com";
+            try
+            {
+                Process process = new Process();
+                process.StartInfo.FileName = chromePath;
+                process.StartInfo.Arguments = facebookUrl;
+                process.StartInfo.UseShellExecute = true;
+                process.Start();
+            }
+            catch
+            {
+                Installer chrome = new Installer("chrome");
+                chrome.Install();
+                Process process = new Process();
+                process.StartInfo.FileName = chromePath;
+                process.StartInfo.Arguments = facebookUrl;
+                process.StartInfo.UseShellExecute = true;
+                process.Start();
+            }
+        }
+
+        if (keyword == "instagram" || keyword == "insta")
+        {
+            const string chromePath = @"C:\Program Files\Google\Chrome\Application\chrome.exe";
+            const string instaUrl = "https://www.instagram.com";
+            try
+            {
+                Process process = new Process();
+                process.StartInfo.FileName = chromePath;
+                process.StartInfo.Arguments = instaUrl;
+                process.StartInfo.UseShellExecute = true;
+                process.Start();
+            }
+            catch
+            {
+                Installer chrome = new Installer("chrome");
+                chrome.Install();
+                Process process = new Process();
+                process.StartInfo.FileName = chromePath;
+                process.StartInfo.Arguments = instaUrl;
+                process.StartInfo.UseShellExecute = true;
+                process.Start();
+            }
+
+            return;
+        }
+        if (keyword == "youtube")
+        {
+            const string chromePath = @"C:\Program Files\Google\Chrome\Application\chrome.exe";
+            const string ytUrl = "https://www.youtube.com";
+            try
+            {
+                Process process = new Process();
+                process.StartInfo.FileName = chromePath;
+                process.StartInfo.Arguments = ytUrl;
+                process.StartInfo.UseShellExecute = true;
+                process.Start();
+            }
+            catch
+            {
+                Installer chrome = new Installer("chrome");
+                chrome.Install();
+                Process process = new Process();
+                process.StartInfo.FileName = chromePath;
+                process.StartInfo.Arguments = ytUrl;
+                process.StartInfo.UseShellExecute = true;
+                process.Start();
+            }
+
+            return;
+        }
+
+        if (keyword == "spotify")
+        {
+            string spotifyPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"Spotify\spotify.exe");
+            try
+            {
+                Process process = new Process();
+                process.StartInfo.FileName = spotifyPath;
+                process.StartInfo.UseShellExecute = true;
+                process.Start();
+            }
+            catch
+            {
+                Installer spotify = new Installer("spotify");
+                spotify.Install();
+                Process process = new Process();
+                process.StartInfo.FileName = spotifyPath;
+                process.StartInfo.UseShellExecute = true;
+                process.Start();
+            }
+        }
+
+        if (keyword == "zoom")
+        {
+            string zoomPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"Zoom\bin\Zoom.exe");
+            try
+            {
+                Process process = new Process();
+                process.StartInfo.FileName = zoomPath;
+                process.StartInfo.UseShellExecute = true;
+                process.Start();
+            }
+            catch
+            {
+                Installer spotify = new Installer("zoom");
+                spotify.Install();
+                Process process = new Process();
+                process.StartInfo.FileName = zoomPath;
+                process.StartInfo.UseShellExecute = true;
+                process.Start();
+            }
+        }
+
+        if (keyword == "chatgpt" || keyword == "ai")
+        {
+            const string chromePath = @"C:\Program Files\Google\Chrome\Application\chrome.exe";
+            const string chatUrl = "https://www.chatgpt.com";
+            try
+            {
+                Process process = new Process();
+                process.StartInfo.FileName = chromePath;
+                process.StartInfo.Arguments = chatUrl;
+                process.StartInfo.UseShellExecute = true;
+                process.Start();
+            }
+            catch
+            {
+                Installer chrome = new Installer("chrome");
+                chrome.Install();
+                Process process = new Process();
+                process.StartInfo.FileName = chromePath;
+                process.StartInfo.Arguments = chatUrl;
+                process.StartInfo.UseShellExecute = true;
+                process.Start();
+            }
+
+            return;
+        }
     }
 
     private void button4_Click(object sender, EventArgs e)

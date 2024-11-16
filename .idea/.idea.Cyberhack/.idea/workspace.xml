@@ -8,18 +8,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a4a3b25d-c75b-4f66-95c7-38181da09987" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Cyberhack/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Cyberhack/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cyberhack/Form1.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/Form1.Designer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cyberhack/Form1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/Form1.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cyberhack/bin/Debug/net9.0-windows/Cyberhack.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/bin/Debug/net9.0-windows/Cyberhack.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cyberhack/bin/Debug/net9.0-windows/Cyberhack.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/bin/Debug/net9.0-windows/Cyberhack.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cyberhack/bin/Debug/net9.0-windows/Cyberhack.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/bin/Debug/net9.0-windows/Cyberhack.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cyberhack/obj/Cyberhack.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/Cyberhack.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cyberhack/obj/Cyberhack.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/Cyberhack.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/.NETCoreApp,Version=v9.0.AssemblyAttributes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/.NETCoreApp,Version=v9.0.AssemblyAttributes.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.csproj.GenerateResource.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.csproj.GenerateResource.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.genruntimeconfig.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/apphost.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/ref/Cyberhack.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/ref/Cyberhack.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/refint/Cyberhack.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/refint/Cyberhack.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cyberhack/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cyberhack/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cyberhack/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cyberhack/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cyberhack/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,15 +54,14 @@
     &quot;assignee&quot;: &quot;Eugen2613&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/IaniIrascu/Cyberhack.git&quot;,
-    &quot;accountId&quot;: &quot;dfedb27c-e25f-448d-9cf5-7f013d9c1075&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/IaniIrascu/Cyberhack.git",
+    "accountId": "f2b1833c-02d8-4baf-bec2-3092472be460"
   }
-}</component>
+}]]></component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://C:/Users/canta/RiderProjects/Cyberhack/Cyberhack/Form1.Designer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/canta/RiderProjects/Cyberhack/Cyberhack/Form1.Designer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/.NETCoreApp,Version=v9.0.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
@@ -57,20 +72,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Project.Cyberhack.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;continue&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Project.Cyberhack.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Cyberhack" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -101,6 +117,7 @@
       <updated>1731762431889</updated>
       <workItem from="1731762432964" duration="1551000" />
       <workItem from="1731764862966" duration="659000" />
+      <workItem from="1731768867537" duration="350000" />
     </task>
     <servers />
   </component>
