@@ -12,4 +12,10 @@ public partial class Form1 : Form
         Installer chrome = new Installer("chrome");
         chrome.Install();
     }
+
+    private void button2_Click(object sender, EventArgs e)
+    {
+        Installer facebook = new Installer("facebook");
+        facebook.Install();
+    }
 }

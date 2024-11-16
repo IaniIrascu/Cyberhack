@@ -31,6 +31,7 @@ partial class Form1
     {
         process1 = new System.Diagnostics.Process();
         button1 = new System.Windows.Forms.Button();
+        button2 = new System.Windows.Forms.Button();
         SuspendLayout();
         // 
         // process1
@@ -52,15 +53,28 @@ partial class Form1
         button1.UseVisualStyleBackColor = true;
         button1.Click += button1_Click;
         // 
+        // button2
+        // 
+        button2.Location = new System.Drawing.Point(449, 61);
+        button2.Name = "button2";
+        button2.Size = new System.Drawing.Size(227, 59);
+        button2.TabIndex = 1;
+        button2.Text = "button2";
+        button2.UseVisualStyleBackColor = true;
+        button2.Click += button2_Click;
+        // 
         // Form1
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         ClientSize = new System.Drawing.Size(800, 450);
+        Controls.Add(button2);
         Controls.Add(button1);
         Text = "Form1";
         ResumeLayout(false);
     }
+
+    private System.Windows.Forms.Button button2;
 
     private System.Windows.Forms.Button button1;
 
