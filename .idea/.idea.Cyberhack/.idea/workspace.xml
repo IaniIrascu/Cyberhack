@@ -7,7 +7,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a4a3b25d-c75b-4f66-95c7-38181da09987" name="Changes" comment="" />
+    <list default="true" id="a4a3b25d-c75b-4f66-95c7-38181da09987" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Cyberhack/Form1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/Form1.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cyberhack/bin/Debug/net9.0-windows/Cyberhack.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/bin/Debug/net9.0-windows/Cyberhack.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cyberhack/bin/Debug/net9.0-windows/Cyberhack.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/bin/Debug/net9.0-windows/Cyberhack.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cyberhack/bin/Debug/net9.0-windows/Cyberhack.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/bin/Debug/net9.0-windows/Cyberhack.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/apphost.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/ref/Cyberhack.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/ref/Cyberhack.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/refint/Cyberhack.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/refint/Cyberhack.dll" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,8 +44,9 @@
     &quot;accountId&quot;: &quot;dfedb27c-e25f-448d-9cf5-7f013d9c1075&quot;
   }
 }</component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock://C:/Users/canta/RiderProjects/Cyberhack/Cyberhack/Form1.Designer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/canta/RiderProjects/Cyberhack/Cyberhack/Form1.Designer.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
@@ -48,7 +62,7 @@
     &quot;.NET Project.Cyberhack.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;continue&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -80,12 +94,13 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="9af7ac51-7016-45d7-ba48-bb81408647f1" name="Changes" comment="" />
+      <changelist id="a4a3b25d-c75b-4f66-95c7-38181da09987" name="Changes" comment="" />
       <created>1731762431889</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1731762431889</updated>
       <workItem from="1731762432964" duration="1551000" />
+      <workItem from="1731764862966" duration="659000" />
     </task>
     <servers />
   </component>
