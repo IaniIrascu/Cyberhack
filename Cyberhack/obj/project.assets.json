@@ -8,20 +8,20 @@
     "net9.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\iiras\\.nuget\\packages\\": {}
+    "C:\\Users\\HP\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\iiras\\RiderProjects\\Cyberhack\\Cyberhack\\Cyberhack.csproj",
+      "projectUniqueName": "C:\\Users\\HP\\RiderProjects\\PPROIECT_CYBER\\Cyberhack\\Cyberhack.csproj",
       "projectName": "Cyberhack",
-      "projectPath": "C:\\Users\\iiras\\RiderProjects\\Cyberhack\\Cyberhack\\Cyberhack.csproj",
-      "packagesPath": "C:\\Users\\iiras\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\iiras\\RiderProjects\\Cyberhack\\Cyberhack\\obj\\",
+      "projectPath": "C:\\Users\\HP\\RiderProjects\\PPROIECT_CYBER\\Cyberhack\\Cyberhack.csproj",
+      "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\HP\\RiderProjects\\PPROIECT_CYBER\\Cyberhack\\obj\\",
       "projectStyle": "PackageReference",
       "UsingMicrosoftNETSdk": false,
       "configFilePaths": [
-        "C:\\Users\\iiras\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0-windows"
@@ -68,7 +68,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\iiras\\.dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
