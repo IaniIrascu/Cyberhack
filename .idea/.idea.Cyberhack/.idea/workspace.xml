@@ -7,7 +7,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9af7ac51-7016-45d7-ba48-bb81408647f1" name="Changes" comment="" />
+    <list default="true" id="a4a3b25d-c75b-4f66-95c7-38181da09987" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Cyberhack/KeyWordFinder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Cyberhack/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Cyberhack/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cyberhack/Form1.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/Form1.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cyberhack/Form1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/Form1.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cyberhack/bin/Debug/net9.0-windows/Cyberhack.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/bin/Debug/net9.0-windows/Cyberhack.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cyberhack/bin/Debug/net9.0-windows/Cyberhack.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/bin/Debug/net9.0-windows/Cyberhack.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cyberhack/bin/Debug/net9.0-windows/Cyberhack.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/bin/Debug/net9.0-windows/Cyberhack.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.genruntimeconfig.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/apphost.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/ref/Cyberhack.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/ref/Cyberhack.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/refint/Cyberhack.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/refint/Cyberhack.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cyberhack/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cyberhack/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/rider.project.restore.info" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,21 +40,25 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Eugen2613"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Eugen2613&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/IaniIrascu/Cyberhack.git",
-    "accountId": "dfedb27c-e25f-448d-9cf5-7f013d9c1075"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/IaniIrascu/Cyberhack.git&quot;,
+    &quot;accountId&quot;: &quot;dfedb27c-e25f-448d-9cf5-7f013d9c1075&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock://C:/Users/canta/RiderProjects/Cyberhack/Cyberhack/Form1.Designer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/canta/RiderProjects/Cyberhack/Cyberhack/Form1.Designer.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2ovuaB3lqBP6noka70Ev36mTSgM" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -45,7 +70,7 @@
     ".NET Project.Cyberhack.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "continue",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -77,12 +102,13 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="9af7ac51-7016-45d7-ba48-bb81408647f1" name="Changes" comment="" />
+      <changelist id="a4a3b25d-c75b-4f66-95c7-38181da09987" name="Changes" comment="" />
       <created>1731762431889</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1731762431889</updated>
       <workItem from="1731762432964" duration="1551000" />
+      <workItem from="1731764862966" duration="659000" />
     </task>
     <servers />
   </component>
