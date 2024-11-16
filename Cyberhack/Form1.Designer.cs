@@ -36,11 +36,20 @@ partial class Form1
         ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
         SuspendLayout();
         // 
+        // process1
+        // 
+        process1.StartInfo.Domain = "";
+        process1.StartInfo.LoadUserProfile = false;
+        process1.StartInfo.UseCredentialsForNetworkingOnly = false;
+        process1.StartInfo.UserName = "";
+        process1.StartInfo.UseShellExecute = false;
+        process1.SynchronizingObject = this;
+        // 
         // button1
         // 
         button1.Location = new System.Drawing.Point(311, 73);
         button1.Name = "button1";
-        button1.Size = new System.Drawing.Size(119, 88);
+        button1.Size = new System.Drawing.Size(263, 68);
         button1.TabIndex = 0;
         button1.Text = "button1";
         button1.UseVisualStyleBackColor = true;
@@ -76,6 +85,8 @@ partial class Form1
     private System.Windows.Forms.BindingSource bindingSource1;
 
     private System.Windows.Forms.Button button1;
+
+    private System.Diagnostics.Process process1;
 
     #endregion
 }
