@@ -3,23 +3,60 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Diagnostics;
 using static Cyberhack.KeyWordFinder;
-using Google.Apis.Auth.OAuth2;
-
-/*namespace GoogleTranslate
-{ 
-    public class GoogleTranslate
-    {
-        private readonly UserCredential _credential;
-        public GoogleTranslate(UserCredential credential)
-        {
-            _credential = credential;
-        }
+using System.Speech.Synthesis;
+using OpenAI;
 
 namespace Cyberhack;
+using Azure.AI.OpenAI;
 
+using static System.Windows.Forms.Timer;
+using System.Runtime.InteropServices;
+
+using static WindowsSettingsBrightnessController;
 public partial class Form1 : Form
 {
-        private void CustomizeUI()
+
+    private System.Windows.Forms.Timer batteryTimer;
+
+    private void batteryTimer_Tick(object? sender, EventArgs e)
+    {
+        CheckBatteryStatus();
+    }
+    private void StartBatteryMonitor()
+    {
+        batteryTimer = new System.Windows.Forms.Timer();
+        batteryTimer.Interval = 6000;
+        // la interval de un minut imi verifica starea bateriei.
+        batteryTimer.Tick += batteryTimer_Tick;
+        batteryTimer.Start();
+    }
+
+    private void CheckBatteryStatus()
+    {
+        var powerStatus = SystemInformation.PowerStatus;
+        float nivelBaterie = powerStatus.BatteryLifePercent * 100;
+        int ok = 0;
+        if (nivelBaterie <= 20 && ok == 0)
+        {
+            // daca bateria ar fi mai mica decat 20 la suta, atunci 
+            // s-ar activa modul salveaza baterie.
+            WindowsSettingsBrightnessController.Set(30);
+            ActiveazaPowerSaverMode();
+            ok = 1;
+        }
+
+        if (nivelBaterie >= 21 && ok == 1)
+        {
+            ok = 0;
+        }
+    }
+
+    public void ActiveazaPowerSaverMode()
+    {
+       SpeechSynthesizer speechSynthesizer = new SpeechSynthesizer();
+       speechSynthesizer.Speak("Pay attention! The battery is below twenty percent!");
+    }
+    private void CustomizeUI()
         {
             // Set modern font
             Font modernFont = new Font("Segoe UI", 10, FontStyle.Regular);
@@ -29,7 +66,6 @@ public partial class Form1 : Form
             label1.Font = modernFont;
             label1.BackColor = Color.Black;
             label1.FlatStyle = FlatStyle.Flat;
-            
             label1.ForeColor = Color.White;
             label1.TextAlign = ContentAlignment.MiddleCenter;
             label1.Text = "Welcome to my Config";
@@ -108,25 +144,16 @@ public partial class Form1 : Form
     {
         InitializeComponent();
         CustomizeUI();
-    }
-
-    private void textBox2_TextChanged(object sender, KeyEventArgs e)
-    {
-        throw new System.NotImplementedException();
+        StartBatteryMonitor();
     }
     
-    private void button1_Click(object sender, EventArgs e)
-    {
-        WindowsSettingsBrightnessController.Set(WindowsSettingsBrightnessController.Get() + 10);
-    }
-
     private void button3_Click(object sender, EventArgs e)
     {
-        string workingDirectory = Environment.CurrentDirectory;
-        string projectDirectory = Directory.GetParent(workingDirectory).Parent.Parent.FullName;
-        Console.WriteLine(projectDirectory);
-        System.Media.SoundPlayer player = new System.Media.SoundPlayer(projectDirectory + "\\file_example_WAV_1MG.wav");
-        player.Play();
+        // string workingDirectory = Environment.CurrentDirectory;
+        // string projectDirectory = Directory.GetParent(workingDirectory).Parent.Parent.FullName;
+        // Console.WriteLine(projectDirectory);
+        // System.Media.SoundPlayer player = new System.Media.SoundPlayer(projectDirectory + "\\file_example_WAV_1MG.wav");
+        // player.Play();
         WindowsSettingsBrightnessController.Set(100);
         
         string input = textBox1.Text.ToLower();
@@ -137,10 +164,19 @@ public partial class Form1 : Form
         // creez instanta si caut substringurile.
         KeyWordFinder finder = new KeyWordFinder();
         
-        List<string> words = ["whatsapp", "desktop", "instagram", "chrome", "settings", "setting", "set", "change", "background", "word", "excel", "powerpoint", "gallery", "brightness", "files", "pictures", "documents"];
+        List<string> words = ["chatgpt", "whatsapp", "desktop", "instagram", "chrome", "settings", "setting", "set", "change", "background", "word", "excel", "powerpoint", "gallery", "brightness", "files", "pictures", "documents"];
 
         String keyword = finder.FindSubstring(input.ToLower(), words);
         
+        SpeechSynthesizer synthesizer = new SpeechSynthesizer();
+        if (keyword != null)
+        {
+            synthesizer.Speak($"Found keyword: {keyword}");
+        }
+        else
+        {
+            synthesizer.Speak("No keyword found");
+        }
         // Cautare keyword principal
         
         
@@ -207,7 +243,6 @@ public partial class Form1 : Form
                     Console.WriteLine($"Error starting process for file {file.Name}");
                 }
             }
-
             return;
         }
 
@@ -235,13 +270,28 @@ public partial class Form1 : Form
         WindowsSettingsBrightnessController.Set(WindowsSettingsBrightnessController.Get() - 10);
     }
 
-    private void label1_Click(object sender, EventArgs e)
+    private void trackBar1_Scroll(object sender, EventArgs e)
     {
         
     }
 
-    private void textBox1_TextChanged(object sender, EventArgs e)
+    private void button4_Click_1(object sender, EventArgs e)
     {
-       
+        try
+        {
+            // URL-ul ChatGPT
+            string chatUrl = "https://chat.openai.com/";
+
+            // Deschidem ChatGPT in browser.
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = chatUrl,
+                UseShellExecute = true
+            });
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show($"Eroare la deschiderea ChatGPT: {ex.Message}");
+        }
     }
 }
