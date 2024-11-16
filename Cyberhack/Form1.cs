@@ -7,9 +7,58 @@ using static Cyberhack.KeyWordFinder;
 using System.Speech.Synthesis;
 using System.Threading;
 
-
-
 namespace Cyberhack;
+
+using static System.Windows.Forms.Timer;
+using System.Runtime.InteropServices;
+
+using static WindowsSettingsBrightnessController;
+public partial class Form1 : Form
+{
+
+    private System.Windows.Forms.Timer batteryTimer;
+
+    private void batteryTimer_Tick(object? sender, EventArgs e)
+    {
+        CheckBatteryStatus();
+    }
+    private void StartBatteryMonitor()
+    {
+        batteryTimer = new System.Windows.Forms.Timer();
+        batteryTimer.Interval = 6000;
+        // la interval de un minut imi verifica starea bateriei.
+        batteryTimer.Tick += batteryTimer_Tick;
+        batteryTimer.Start();
+    }
+
+    private void CheckBatteryStatus()
+    {
+        var powerStatus = SystemInformation.PowerStatus;
+        float nivelBaterie = powerStatus.BatteryLifePercent * 100;
+        int ok = 0;
+        if (nivelBaterie <= 20 && ok == 0)
+        {
+            // daca bateria ar fi mai mica decat 20 la suta, atunci 
+            // s-ar activa modul salveaza baterie.
+            WindowsSettingsBrightnessController.Set(30);
+            ActiveazaPowerSaverMode();
+            ok = 1;
+        }
+
+        if (nivelBaterie >= 21 && ok == 1)
+        {
+            ok = 0;
+        }
+    }
+
+
+    public void ActiveazaPowerSaverMode()
+    {
+       SpeechSynthesizer speechSynthesizer = new SpeechSynthesizer();
+       speechSynthesizer.Speak("Pay attention! The battery is below twenty percent!");
+    }
+    private void CustomizeUI()
+        {
 
 public partial class Form1 : Form
 {
@@ -20,13 +69,11 @@ public partial class Form1 : Form
     SpeechSynthesizer synthesizer = new SpeechSynthesizer();
 
     private void CustomizeUI()
-    {
+
             // Set modern font
             Font modernFont = new Font("Confort", 12, FontStyle.Regular);
 
             // Style Button1 (Brighter)
-
-
             button1.Font = modernFont;
             button1.BackColor = Color.LightBlue;
             button1.FlatStyle = FlatStyle.Flat;
@@ -137,13 +184,9 @@ public partial class Form1 : Form
     {
         InitializeComponent();
         CustomizeUI();
+        StartBatteryMonitor();
     }
-
-    private void textBox2_TextChanged(object sender, KeyEventArgs e)
-    {
-        throw new System.NotImplementedException();
-    }
-
+    
     private void button1_Click(object sender, EventArgs e)
     {
         WindowsSettingsBrightnessController.Set(WindowsSettingsBrightnessController.Get() + 10);
@@ -161,15 +204,26 @@ public partial class Form1 : Form
 
         // creez instanta si caut substringurile.
         KeyWordFinder finder = new KeyWordFinder();
+
         List<string> words =
         [
             "whatsapp", "facebook", "desktop", "instagram", "chrome", "settings",
             "setting", "set", "change", "background", "word", "excel", "powerpoint", "gallery",
             "brightness", "files", "pictures", "documents", "spotify", "music", "internet",
-            "youtube", "zoom", "chatgpt"];
+            "youtube", "zoom", "chatgpt"
         ];
+
         String keyword = finder.FindSubstring(input.ToLower(), words);
         
+        SpeechSynthesizer synthesizer = new SpeechSynthesizer();
+        if (keyword != null)
+        {
+            synthesizer.Speak($"Found keyword: {keyword}");
+        }
+        else
+        {
+            synthesizer.Speak("No keyword found");
+        }
         // Cautare keyword principal
         List<string> brightnessKeywords = ["brightness", "brighter", "dimmer", "bright"];
         String keyword = finder.FindSubstring(input.ToLower(), brightnessKeywords);
@@ -264,7 +318,6 @@ public partial class Form1 : Form
                     Console.WriteLine($"Error starting process for file {file.Name}");
                 }
             }
-
             return;
         }
 
@@ -551,8 +604,4 @@ public partial class Form1 : Form
         
     }
 
-    private void textBox1_TextChanged(object sender, EventArgs e)
-    {
-       
-    }
 }

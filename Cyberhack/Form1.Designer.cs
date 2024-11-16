@@ -25,7 +25,6 @@ partial class Form1
         textBox1 = new System.Windows.Forms.TextBox();
         button2 = new System.Windows.Forms.Button();
         button3 = new System.Windows.Forms.Button();
-
         button4 = new System.Windows.Forms.Button();
         button5 = new System.Windows.Forms.Button();
         SuspendLayout();
@@ -49,12 +48,10 @@ partial class Form1
         textBox1.Name = "textBox1";
         textBox1.Size = new System.Drawing.Size(471, 45);
         textBox1.TabIndex = 3;
-        textBox1.TextChanged += textBox1_TextChanged;
         // 
         // button2
         // 
         button2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-
         button2.Location = new System.Drawing.Point(585, 108);
         button2.Name = "button2";
         button2.Size = new System.Drawing.Size(183, 56);
@@ -98,7 +95,6 @@ partial class Form1
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-
         ClientSize = new System.Drawing.Size(804, 459);
         Controls.Add(button5);
         Controls.Add(button4);
@@ -109,19 +105,15 @@ partial class Form1
         Icon = ((System.Drawing.Icon)resources.GetObject("$this.Icon"));
         Margin = new System.Windows.Forms.Padding(2);
         Text = "MyConfig";
+        ((System.ComponentModel.ISupportInitialize)trackBar1).EndInit();
         ResumeLayout(false);
         PerformLayout();
     }
-
     private System.Windows.Forms.Button button4;
     private System.Windows.Forms.Button button5;
-
     private System.Windows.Forms.Button button3;
-
     private System.Windows.Forms.Button button2;
-
     private System.Windows.Forms.TextBox textBox1;
-    
     private System.Windows.Forms.Button button1;
 
     #endregion
