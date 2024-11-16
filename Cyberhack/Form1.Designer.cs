@@ -31,19 +31,8 @@ partial class Form1
     {
         components = new System.ComponentModel.Container();
         button1 = new System.Windows.Forms.Button();
-        bindingSource1 = new System.Windows.Forms.BindingSource(components);
         textBox2 = new System.Windows.Forms.TextBox();
-        ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
         SuspendLayout();
-        // 
-        // process1
-        // 
-        process1.StartInfo.Domain = "";
-        process1.StartInfo.LoadUserProfile = false;
-        process1.StartInfo.UseCredentialsForNetworkingOnly = false;
-        process1.StartInfo.UserName = "";
-        process1.StartInfo.UseShellExecute = false;
-        process1.SynchronizingObject = this;
         // 
         // button1
         // 
@@ -54,10 +43,6 @@ partial class Form1
         button1.Text = "button1";
         button1.UseVisualStyleBackColor = true;
         button1.Click += button1_Click;
-        // 
-        // bindingSource1
-        // 
-        bindingSource1.CurrentChanged += bindingSource1_CurrentChanged;
         // 
         // textBox2
         // 
@@ -75,18 +60,14 @@ partial class Form1
         Controls.Add(button1);
         Margin = new System.Windows.Forms.Padding(2);
         Text = "Form1";
-        ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
         ResumeLayout(false);
         PerformLayout();
     }
 
     private System.Windows.Forms.TextBox textBox2;
 
-    private System.Windows.Forms.BindingSource bindingSource1;
 
     private System.Windows.Forms.Button button1;
-
-    private System.Diagnostics.Process process1;
-
+    
     #endregion
 }
