@@ -41,9 +41,9 @@ partial class Form1
         // button1
         // 
         button1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-        button1.Location = new System.Drawing.Point(580, 115);
+        button1.Location = new System.Drawing.Point(585, 33);
         button1.Name = "button1";
-        button1.Size = new System.Drawing.Size(202, 45);
+        button1.Size = new System.Drawing.Size(183, 56);
         button1.TabIndex = 0;
         button1.Text = "Brighter";
         button1.UseVisualStyleBackColor = false;
@@ -52,18 +52,19 @@ partial class Form1
         // textBox1
         // 
         textBox1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-        textBox1.Location = new System.Drawing.Point(39, 264);
+        textBox1.Location = new System.Drawing.Point(39, 246);
+        textBox1.Multiline = true;
         textBox1.Name = "textBox1";
-        textBox1.Size = new System.Drawing.Size(471, 27);
+        textBox1.Size = new System.Drawing.Size(471, 45);
         textBox1.TabIndex = 3;
         textBox1.TextChanged += textBox1_TextChanged;
         // 
         // button2
         // 
         button2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-        button2.Location = new System.Drawing.Point(39, 118);
+        button2.Location = new System.Drawing.Point(585, 108);
         button2.Name = "button2";
-        button2.Size = new System.Drawing.Size(179, 45);
+        button2.Size = new System.Drawing.Size(183, 56);
         button2.TabIndex = 4;
         button2.Text = "Dimmer";
         button2.UseVisualStyleBackColor = false;
@@ -72,9 +73,9 @@ partial class Form1
         // button3
         // 
         button3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-        button3.Location = new System.Drawing.Point(580, 264);
+        button3.Location = new System.Drawing.Point(569, 246);
         button3.Name = "button3";
-        button3.Size = new System.Drawing.Size(202, 45);
+        button3.Size = new System.Drawing.Size(213, 45);
         button3.TabIndex = 5;
         button3.Text = "Search";
         button3.UseVisualStyleBackColor = false;
@@ -83,7 +84,7 @@ partial class Form1
         // button4
         // 
         button4.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-        button4.Location = new System.Drawing.Point(55, 329);
+        button4.Location = new System.Drawing.Point(39, 314);
         button4.Name = "button4";
         button4.Size = new System.Drawing.Size(179, 50);
         button4.TabIndex = 7;
@@ -93,7 +94,7 @@ partial class Form1
         // button5
         // 
         button5.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-        button5.Location = new System.Drawing.Point(349, 329);
+        button5.Location = new System.Drawing.Point(331, 314);
         button5.Name = "button5";
         button5.Size = new System.Drawing.Size(179, 50);
         button5.TabIndex = 8;
