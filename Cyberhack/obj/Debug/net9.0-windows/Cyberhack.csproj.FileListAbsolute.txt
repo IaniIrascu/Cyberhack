@@ -1,0 +1,15 @@
+C:\Users\iiras\RiderProjects\Cyberhack\Cyberhack\bin\Debug\net9.0-windows\Cyberhack.exe
+C:\Users\iiras\RiderProjects\Cyberhack\Cyberhack\bin\Debug\net9.0-windows\Cyberhack.deps.json
+C:\Users\iiras\RiderProjects\Cyberhack\Cyberhack\bin\Debug\net9.0-windows\Cyberhack.runtimeconfig.json
+C:\Users\iiras\RiderProjects\Cyberhack\Cyberhack\bin\Debug\net9.0-windows\Cyberhack.dll
+C:\Users\iiras\RiderProjects\Cyberhack\Cyberhack\bin\Debug\net9.0-windows\Cyberhack.pdb
+C:\Users\iiras\RiderProjects\Cyberhack\Cyberhack\obj\Debug\net9.0-windows\Cyberhack.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\iiras\RiderProjects\Cyberhack\Cyberhack\obj\Debug\net9.0-windows\Cyberhack.AssemblyInfoInputs.cache
+C:\Users\iiras\RiderProjects\Cyberhack\Cyberhack\obj\Debug\net9.0-windows\Cyberhack.AssemblyInfo.cs
+C:\Users\iiras\RiderProjects\Cyberhack\Cyberhack\obj\Debug\net9.0-windows\Cyberhack.csproj.CoreCompileInputs.cache
+C:\Users\iiras\RiderProjects\Cyberhack\Cyberhack\obj\Debug\net9.0-windows\Cyberhack.sourcelink.json
+C:\Users\iiras\RiderProjects\Cyberhack\Cyberhack\obj\Debug\net9.0-windows\Cyberhack.dll
+C:\Users\iiras\RiderProjects\Cyberhack\Cyberhack\obj\Debug\net9.0-windows\refint\Cyberhack.dll
+C:\Users\iiras\RiderProjects\Cyberhack\Cyberhack\obj\Debug\net9.0-windows\Cyberhack.pdb
+C:\Users\iiras\RiderProjects\Cyberhack\Cyberhack\obj\Debug\net9.0-windows\Cyberhack.genruntimeconfig.cache
+C:\Users\iiras\RiderProjects\Cyberhack\Cyberhack\obj\Debug\net9.0-windows\ref\Cyberhack.dll
