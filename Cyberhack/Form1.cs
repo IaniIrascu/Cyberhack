@@ -68,12 +68,12 @@ public partial class Form1 : Form
     private void CustomizeUI()
     {
         // Set modern font
-        Font modernFont = new Font("Confort", 12, FontStyle.Regular);
+        Font modernFont = new Font("Georgia", 12, FontStyle.Regular);
 
         // Style Button1 (Brighter)
         button1.Font = modernFont;
-        button1.BackColor = Color.LightBlue;
         button1.FlatStyle = FlatStyle.Flat;
+        button1.BackColor = Color.FromArgb(238, 238, 238);
         button1.FlatAppearance.BorderSize = 0;
         button1.ForeColor = Color.White;
         button1.TextAlign = ContentAlignment.MiddleCenter;
@@ -81,8 +81,8 @@ public partial class Form1 : Form
 
         // Style Button2 (Dimmer)
         button2.Font = modernFont;
-        button2.BackColor = Color.CornflowerBlue;
         button2.FlatStyle = FlatStyle.Flat;
+        button1.BackColor = Color.FromArgb(57, 62, 70);
         button2.FlatAppearance.BorderSize = 0;
         button2.ForeColor = Color.White;
         button2.TextAlign = ContentAlignment.MiddleCenter;
@@ -90,7 +90,7 @@ public partial class Form1 : Form
 
         // Style Button3 (Search)
         button3.Font = modernFont;
-        button3.BackColor = Color.MediumSlateBlue;
+        button3.BackColor = Color.FromArgb(0, 173, 181);
         button3.FlatStyle = FlatStyle.Flat;
         button3.FlatAppearance.BorderSize = 0;
         button3.ForeColor = Color.White;
@@ -98,7 +98,7 @@ public partial class Form1 : Form
         button3.Text = "Search 🔍";
 
         button4.Font = modernFont;
-        button4.BackColor = Color.Red;
+        button4.BackColor = Color.FromArgb(117, 14, 33);
         button4.FlatStyle = FlatStyle.Flat;
         button4.FlatAppearance.BorderSize = 0;
         button4.ForeColor = Color.White;
@@ -106,7 +106,7 @@ public partial class Form1 : Form
         button4.Text = "No ❌";
 
         button5.Font = modernFont;
-        button5.BackColor = Color.YellowGreen;
+        button5.BackColor = Color.FromArgb(0, 91, 65);
         button5.FlatStyle = FlatStyle.Flat;
         button5.FlatAppearance.BorderSize = 0;
         button5.ForeColor = Color.White;
@@ -116,11 +116,12 @@ public partial class Form1 : Form
 
         // Style TextBox1 (Input)
         textBox1.Font = modernFont;
-        textBox1.BackColor = Color.WhiteSmoke;
-        textBox1.ForeColor = Color.Gray;
-        textBox1.Text = "Welcome to myConfig. Type your query here...";
+        textBox1.BackColor = Color.FromArgb(238, 238, 238);
+        textBox1.ForeColor = Color.FromArgb(57, 62, 70);
+        textBox1.Text = "Type your query here...";
         textBox1.GotFocus += RemovePlaceholderText;
         textBox1.LostFocus += AddPlaceholderText;
+        
 
         button1.Anchor = AnchorStyles.None;
         button2.Anchor = AnchorStyles.None;
@@ -128,13 +129,6 @@ public partial class Form1 : Form
         textBox1.Anchor = AnchorStyles.None;
         button4.Anchor = AnchorStyles.None;
         button5.Anchor = AnchorStyles.None;
-
-
-
-        button1.Anchor = AnchorStyles.None;
-        button2.Anchor = AnchorStyles.None;
-        button3.Anchor = AnchorStyles.None;
-        textBox1.Anchor = AnchorStyles.None;
     }
 
 
@@ -143,7 +137,7 @@ public partial class Form1 : Form
 // Placeholder handling for the text box
     private void RemovePlaceholderText(object sender, EventArgs e)
     {
-        if (textBox1.Text == "Welcome to myConfig. Type your query here...")
+        if (textBox1.Text == "Type your query here...")
         {
             textBox1.Text = "";
             textBox1.ForeColor = Color.Black;
@@ -154,7 +148,7 @@ public partial class Form1 : Form
     {
         if (string.IsNullOrWhiteSpace(textBox1.Text))
         {
-            textBox1.Text = "Welcome to myConfig. Type your query here... ";
+            textBox1.Text = "Type your query here... ";
             textBox1.ForeColor = Color.Gray;
         }
     }

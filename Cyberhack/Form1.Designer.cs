@@ -96,6 +96,7 @@ partial class Form1
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+        BackColor = System.Drawing.Color.FromArgb(((int)((byte)34)), ((int)((byte)40)), ((int)((byte)49)));
         ClientSize = new System.Drawing.Size(804, 459);
         Controls.Add(button5);
         Controls.Add(button4);
