@@ -16,7 +16,7 @@ using static WindowsSettingsBrightnessController;
 
 public partial class Form1 : Form
 {
-
+    
     private System.Windows.Forms.Timer batteryTimer;
 
     private void batteryTimer_Tick(object? sender, EventArgs e)
@@ -60,6 +60,8 @@ public partial class Form1 : Form
     }
 
     private String _keyword = null;
+    private String _input = null;
+
     private bool buttonClicked = false;
     private System.Windows.Forms.Timer waitTimer;
     private bool askedQuestion = false;
@@ -149,9 +151,7 @@ public partial class Form1 : Form
             textBox1.ForeColor = Color.Gray;
         }
     }
-
-
-
+    
     
     private void textBox1_KeyDown(object sender, KeyEventArgs e)
     {
@@ -285,6 +285,20 @@ public partial class Form1 : Form
             waitTimer.Interval = 100; // Check every 100 milliseconds
             waitTimer.Tick += WaitForButtonClick;
         }
+        //print
+        List <string> aboutprint = ["print"];
+        keyword = finder.FindSubstring(input.ToLower(), aboutprint);
+        if (keyword == "print")  
+        {
+            _keyword = keyword;
+            _input = input;
+            askedQuestion = true;
+            synthesizer.Speak("Would you like to print this document?");
+            waitTimer = new System.Windows.Forms.Timer();
+            waitTimer.Interval = 100; // Check every 100 milliseconds
+            waitTimer.Tick += WaitForButtonClick;
+            
+        }
 
         List<string> settingsKeywords = ["set", "chang", "deskto", "searc"];
         keyword = finder.FindSubstring(input.ToLower(), settingsKeywords);
@@ -306,7 +320,6 @@ public partial class Form1 : Form
                         Environment.GetFolderPath(Environment.SpecialFolder.CommonDesktopDirectory)).GetFiles())
                     .Distinct();
             string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-
             foreach (var file in list)
             {
                 String filename = file.Name.ToLower();
@@ -736,6 +749,44 @@ public partial class Form1 : Form
                     process.Start();
                 }
                 return;
+            }
+            if (_keyword == "print")
+            {
+                Console.WriteLine(_input);
+                IEnumerable<FileInfo> list =
+                    new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory)).GetFiles()
+                        .Concat(new DirectoryInfo(
+                            Environment.GetFolderPath(Environment.SpecialFolder.CommonDesktopDirectory)).GetFiles())
+                        .Distinct();
+                string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                foreach (var file in list)
+                {
+                    String filename = file.Name.ToLower();
+                    String nameWithoutExt = Path.GetFileNameWithoutExtension(filename);
+                    try
+                    {
+                        if (_input.Contains("\"" + filename + "\"") ||
+                            (_input.Contains("\"" + nameWithoutExt + "\"") &&
+                             nameWithoutExt == Path.GetFileNameWithoutExtension(file.Name).ToLower()))
+                        {
+                            string filePath = Path.Combine(desktopPath, file.Name);
+
+                            Process process = new Process();
+                            process.StartInfo.FileName = filePath;
+                            process.StartInfo.Verb = "print"; // Automatically triggers printing
+                            process.StartInfo.UseShellExecute = true;
+                            process.Start();
+
+                            synthesizer.Speak($"Printing {file.Name}.");
+                            break;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        // Log or handle the error if needed
+                        synthesizer.Speak($"Error printing file {file.Name}: {ex.Message}");
+                    }
+                }
             }
             askedQuestion = false;
         }
