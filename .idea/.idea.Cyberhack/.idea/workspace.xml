@@ -9,20 +9,21 @@
   <component name="ChangeListManager">
     <list default="true" id="a4a3b25d-c75b-4f66-95c7-38181da09987" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Cyberhack/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Cyberhack/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cyberhack/Form1.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/Form1.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cyberhack/Cyberhack.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/Cyberhack.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cyberhack/Form1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/Form1.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cyberhack/bin/Debug/net9.0-windows/Cyberhack.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/bin/Debug/net9.0-windows/Cyberhack.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cyberhack/bin/Debug/net9.0-windows/Cyberhack.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/bin/Debug/net9.0-windows/Cyberhack.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cyberhack/bin/Debug/net9.0-windows/Cyberhack.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/bin/Debug/net9.0-windows/Cyberhack.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cyberhack/bin/Debug/net9.0-windows/Cyberhack.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/bin/Debug/net9.0-windows/Cyberhack.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cyberhack/obj/Cyberhack.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/Cyberhack.csproj.nuget.dgspec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cyberhack/obj/Cyberhack.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/Cyberhack.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/.NETCoreApp,Version=v9.0.AssemblyAttributes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/.NETCoreApp,Version=v9.0.AssemblyAttributes.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.AssemblyInfoInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.csproj.AssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.csproj.GenerateResource.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.csproj.GenerateResource.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/Cyberhack.genruntimeconfig.cache" afterDir="false" />
@@ -57,10 +58,11 @@
   <component name="GithubPullRequestsUISettings"><![CDATA[{
   "selectedUrlAndAccountId": {
     "url": "https://github.com/IaniIrascu/Cyberhack.git",
-    "accountId": "f2b1833c-02d8-4baf-bec2-3092472be460"
+    "accountId": "dfedb27c-e25f-448d-9cf5-7f013d9c1075"
   }
 }]]></component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/954e866cfb4195c7c38d285a16a4fa058edc71b74d2a2c0bef61c78db9bf2/Control.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Cyberhack/obj/Debug/net9.0-windows/.NETCoreApp,Version=v9.0.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -78,12 +80,13 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "highlight",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "CodeLensConfigurable",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -118,6 +121,7 @@
       <workItem from="1731762432964" duration="1551000" />
       <workItem from="1731764862966" duration="659000" />
       <workItem from="1731768867537" duration="350000" />
+      <workItem from="1731804308306" duration="12622000" />
     </task>
     <servers />
   </component>

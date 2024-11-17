@@ -470,6 +470,28 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
+      "System.Speech/9.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net9.0/System.Speech.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net9.0/System.Speech.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net9.0/System.Speech.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
       "System.Text.Encoding.CodePages/9.0.0": {
         "type": "package",
         "compile": {
@@ -1044,6 +1066,35 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "System.Speech/9.0.0": {
+      "sha512": "z8mvEVBfWSi0692vPOra8MougSEJCDzlaLj4g0aA87XDZpJoJD3BJTcJ0MuFbbN1fOT9Cr2ZFqXhZc+zzX0Gwg==",
+      "type": "package",
+      "path": "system.speech/9.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Speech.targets",
+        "lib/net462/_._",
+        "lib/net8.0/System.Speech.dll",
+        "lib/net8.0/System.Speech.xml",
+        "lib/net9.0/System.Speech.dll",
+        "lib/net9.0/System.Speech.xml",
+        "lib/netstandard2.0/System.Speech.dll",
+        "lib/netstandard2.0/System.Speech.xml",
+        "runtimes/win/lib/net8.0/System.Speech.dll",
+        "runtimes/win/lib/net8.0/System.Speech.xml",
+        "runtimes/win/lib/net9.0/System.Speech.dll",
+        "runtimes/win/lib/net9.0/System.Speech.xml",
+        "system.speech.9.0.0.nupkg.sha512",
+        "system.speech.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
     "System.Text.Encoding.CodePages/9.0.0": {
       "sha512": "GxJTSFPQpoVd0vQRgq8hwesicxgZoHTbYMvR/UMM4IzhkHMT+ebZE11c2C1gUyxz55zWtGCWktMTHvmgLzob9g==",
       "type": "package",
@@ -1110,29 +1161,37 @@
   "projectFileDependencyGroups": {
     "net9.0-windows7.0": [
       "System.Management >= 9.0.0",
-      "System.Management.Automation >= 7.5.0-rc.1"
+      "System.Management.Automation >= 7.5.0-rc.1",
+      "System.Speech >= 9.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\iiras\\.nuget\\packages\\": {}
+    "C:\\Users\\canta\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\iiras\\RiderProjects\\Cyberhack\\Cyberhack\\Cyberhack.csproj",
+      "projectUniqueName": "C:\\Users\\canta\\RiderProjects\\Cyberhack\\Cyberhack\\Cyberhack.csproj",
       "projectName": "Cyberhack",
-      "projectPath": "C:\\Users\\iiras\\RiderProjects\\Cyberhack\\Cyberhack\\Cyberhack.csproj",
-      "packagesPath": "C:\\Users\\iiras\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\iiras\\RiderProjects\\Cyberhack\\Cyberhack\\obj\\",
+      "projectPath": "C:\\Users\\canta\\RiderProjects\\Cyberhack\\Cyberhack\\Cyberhack.csproj",
+      "packagesPath": "C:\\Users\\canta\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\canta\\RiderProjects\\Cyberhack\\Cyberhack\\obj\\",
       "projectStyle": "PackageReference",
       "UsingMicrosoftNETSdk": false,
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\iiras\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\canta\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net9.0-windows"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -1163,6 +1222,10 @@
           "System.Management.Automation": {
             "target": "Package",
             "version": "[7.5.0-rc.1, )"
+          },
+          "System.Speech": {
+            "target": "Package",
+            "version": "[9.0.0, )"
           }
         },
         "imports": [
@@ -1184,16 +1247,8 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\iiras\\.dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\canta\\.dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\iiras\\RiderProjects\\Cyberhack\\Cyberhack\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }

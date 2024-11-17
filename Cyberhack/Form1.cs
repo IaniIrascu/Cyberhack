@@ -64,7 +64,8 @@ public partial class Form1 : Form
     private System.Windows.Forms.Timer waitTimer;
     private bool askedQuestion = false;
     SpeechSynthesizer synthesizer = new SpeechSynthesizer();
-
+    //Form2 form2 = new Form2();
+    
     private void CustomizeUI()
     {
         // Set modern font
@@ -158,9 +159,7 @@ public partial class Form1 : Form
             textBox1.ForeColor = Color.Gray;
         }
     }
-
-
-
+    
     private void Form1_KeyDown(object sender, KeyEventArgs e)
     {
         if (e.KeyCode == Keys.Enter)
@@ -262,9 +261,7 @@ public partial class Form1 : Form
                 "Try to be more specific about what you want to change. For ex: too bright to change the brightness");
             return;
         }
-        
-        keyword = finder.FindSubstring(input.ToLower(), words);
-        if (keyword == "desktop" || keyword == "search")
+        else if (keyword == "desktop" || keyword == "search")
         {
             IEnumerable<FileInfo> list =
                 new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory)).GetFiles()
@@ -508,17 +505,24 @@ public partial class Form1 : Form
         
     void button5_Click(object sender, EventArgs e)
     {
+        int width = Screen.PrimaryScreen.Bounds.Width;
+        int height = Screen.PrimaryScreen.Bounds.Height;
+        
         if (askedQuestion == true)
         {
-            Console.WriteLine("intra");
             if (_keyword == "brightness" || _keyword == "brighter" || _keyword == "dimmer" || _keyword == "bright")
             {
                 Console.WriteLine(_keyword);
                 Process process = new Process();
                 process.StartInfo.FileName = "ms-settings:display";
                 process.StartInfo.UseShellExecute = true;
+                process.StartInfo.WindowStyle = ProcessWindowStyle.Maximized;
                 process.Start();
-                Thread.Sleep(2000);
+                Thread.Sleep(1500);
+                // Se creeaza un nou form
+                Form2 form2 = new Form2(100, 50, width - 500, height / 3);
+                form2.Show();
+                
                 synthesizer.Volume = 100;
                 synthesizer.Speak("In order to change the brightness use the slider in the top of the window.");
                 buttonClicked = true;
@@ -531,7 +535,11 @@ public partial class Form1 : Form
                 process.StartInfo.FileName = "ms-settings:sound";
                 process.StartInfo.UseShellExecute = true;
                 process.Start();
-                Thread.Sleep(2000);
+                Thread.Sleep(1500);
+                
+                Form2 form2 = new Form2(100, 150, width - 500, height / 3);
+                form2.Show();
+                
                 synthesizer.Volume = 100;
                 synthesizer.Speak("In order to change the sound use the slider called volume.");
                 buttonClicked = true;
@@ -544,7 +552,11 @@ public partial class Form1 : Form
                 process.StartInfo.FileName = "ms-settings:keyboard";
                 process.StartInfo.UseShellExecute = true;
                 process.Start();
-                Thread.Sleep(2000);
+                Thread.Sleep(1500);
+                
+                Form2 form2 = new Form2(100, 300, width - 500, height / 3 + 50);
+                form2.Show();
+                
                 synthesizer.Volume = 100;
                 synthesizer.Speak(
                     "Choose the language you want from this menu. If you don't have it use the plus button to download the pack for it.");
@@ -558,7 +570,11 @@ public partial class Form1 : Form
                 process.StartInfo.FileName = "ms-settings:about";
                 process.StartInfo.UseShellExecute = true;
                 process.Start();
-                Thread.Sleep(2000);
+                Thread.Sleep(1500);
+                
+                Form2 form2 = new Form2(100, 50, width - 500, height - 50);
+                form2.Show();
+                
                 synthesizer.Volume = 100;
                 synthesizer.Speak("You can see the details about pc here");
                 buttonClicked = true;
