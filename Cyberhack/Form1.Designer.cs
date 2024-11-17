@@ -30,7 +30,8 @@ partial class Form1
         // 
         // button1
         // 
-        button1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+        button1.BackColor = System.Drawing.Color.FromArgb(((int)((byte)238)), ((int)((byte)238)), ((int)((byte)238)));
+        button1.ForeColor = System.Drawing.Color.FromArgb(((int)((byte)57)), ((int)((byte)62)), ((int)((byte)70)));
         button1.Location = new System.Drawing.Point(585, 33);
         button1.Name = "button1";
         button1.Size = new System.Drawing.Size(183, 56);
@@ -50,7 +51,8 @@ partial class Form1
         // 
         // button2
         // 
-        button2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+        button2.BackColor = System.Drawing.Color.FromArgb(((int)((byte)57)), ((int)((byte)62)), ((int)((byte)70)));
+        button2.ForeColor = System.Drawing.Color.FromArgb(((int)((byte)238)), ((int)((byte)238)), ((int)((byte)238)));
         button2.Location = new System.Drawing.Point(585, 108);
         button2.Name = "button2";
         button2.Size = new System.Drawing.Size(183, 56);
