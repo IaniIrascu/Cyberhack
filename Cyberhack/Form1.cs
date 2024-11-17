@@ -155,13 +155,13 @@ public partial class Form1 : Form
 
 
 
-    private void Form1_KeyDown(object sender, KeyEventArgs e)
+    
+    private void textBox1_KeyDown(object sender, KeyEventArgs e)
     {
         if (e.KeyCode == Keys.Enter)
         {
-            textBox1.Focus();
-            button3.Focus();
-            button3_Click(sender, e);
+            e.SuppressKeyPress = true; // Prevent TextBox from handling Enter
+            button3.PerformClick();   // Simulate Button3 click
         }
     }
 
@@ -170,6 +170,8 @@ public partial class Form1 : Form
         InitializeComponent();
         CustomizeUI();
         StartBatteryMonitor();
+        this.KeyPreview = true; 
+        textBox1.KeyDown += textBox1_KeyDown; // Attach KeyDown event to TextBo
     }
 
     private void button1_Click(object sender, EventArgs e)
