@@ -554,8 +554,7 @@ public partial class Form1 : Form
                 process.Start();
                 Thread.Sleep(1500);
                 
-                Form2 form2 = new Form2(100, 300, width - 500, height / 3 + 50);
-                form2.Show();
+                
                 
                 synthesizer.Volume = 100;
                 synthesizer.Speak(
