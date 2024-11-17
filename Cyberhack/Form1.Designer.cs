@@ -20,7 +20,6 @@ partial class Form1
     /// </summary>
     private void InitializeComponent()
     {
-        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
         button1 = new System.Windows.Forms.Button();
         textBox1 = new System.Windows.Forms.TextBox();
         button2 = new System.Windows.Forms.Button();
@@ -80,6 +79,7 @@ partial class Form1
         button4.TabIndex = 7;
         button4.Text = "No";
         button4.UseVisualStyleBackColor = false;
+        button4.Click += button4_Click;
         // 
         // button5
         // 
@@ -90,10 +90,11 @@ partial class Form1
         button5.TabIndex = 8;
         button5.Text = "Yes";
         button5.UseVisualStyleBackColor = false;
+        button5.Click += button5_Click;
         // 
         // Form1
         // 
-        AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+        AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         ClientSize = new System.Drawing.Size(804, 459);
         Controls.Add(button5);
@@ -102,10 +103,8 @@ partial class Form1
         Controls.Add(button2);
         Controls.Add(textBox1);
         Controls.Add(button1);
-        Icon = ((System.Drawing.Icon)resources.GetObject("$this.Icon"));
         Margin = new System.Windows.Forms.Padding(2);
         Text = "MyConfig";
-        ((System.ComponentModel.ISupportInitialize)trackBar1).EndInit();
         ResumeLayout(false);
         PerformLayout();
     }
