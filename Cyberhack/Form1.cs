@@ -190,15 +190,6 @@ public partial class Form1 : Form
         // creez instanta si caut substringurile.
         KeyWordFinder finder = new KeyWordFinder();
 
-        List<string> words =
-        [
-            "whatsapp", "facebook", "desktop", "instagram", "chrome", "settings",
-            "setting", "set", "change", "background", "word", "excel", "powerpoint", "gallery",
-            "brightness", "files", "pictures", "documents", "spotify", "music", "internet",
-            "youtube", "zoom", "chatgpt", "bright", "search"
-        ];
-        
-
         // Cautare keyword principal
         List<string> brightnessKeywords = ["dim", "brigh"];
         string keyword = finder.FindSubstring(input.ToLower(), brightnessKeywords);
@@ -212,7 +203,7 @@ public partial class Form1 : Form
             waitTimer.Tick += WaitForButtonClick;
         }
 
-        List<string> soundKeywords = ["sound", "loud", "quiet", "volume"];
+        List<string> soundKeywords = ["soun", "loud", "quie", "volu"];
         keyword = finder.FindSubstring(input.ToLower(), soundKeywords);
         if (keyword != null)
         {
@@ -224,7 +215,7 @@ public partial class Form1 : Form
             waitTimer.Tick += WaitForButtonClick;
         }
 
-        List<string> languageKeywords = ["keyboard", "language"];
+        List<string> languageKeywords = ["keyb", "lang"];
         keyword = finder.FindSubstring(input.ToLower(), languageKeywords);
         if (keyword != null)
         {
@@ -236,7 +227,7 @@ public partial class Form1 : Form
             waitTimer.Tick += WaitForButtonClick;
         }
 
-        List<string> aboutKeywords = ["abou", "detai", "pc", "lapto", "window"];
+        List<string> aboutKeywords = ["abou", "detai", "pc", "lapto", "windo"];
         keyword = finder.FindSubstring(input.ToLower(), aboutKeywords);
         if (keyword != null)
         {
@@ -247,15 +238,64 @@ public partial class Form1 : Form
             waitTimer.Interval = 100; // Check every 100 milliseconds
             waitTimer.Tick += WaitForButtonClick;
         }
+        
+        //personalization
+        List <string> aboutPersonalizationKeywords = ["them", "personal"];
+        keyword = finder.FindSubstring(input.ToLower(), aboutPersonalizationKeywords);
+        if (keyword != null)
+        {
+            _keyword = keyword;
+            askedQuestion = true;
+            synthesizer.Speak("Would you like to see ways to personalize this computer?");
+            waitTimer = new System.Windows.Forms.Timer();
+            waitTimer.Interval = 100; // Check every 100 milliseconds
+            waitTimer.Tick += WaitForButtonClick;
+        }
+
+        List <string> aboutApps = ["app"];
+        keyword = finder.FindSubstring(input.ToLower(), aboutApps);
+        if (keyword != null)
+        {
+            _keyword = "apps";
+            askedQuestion = true;
+            synthesizer.Speak("Would you like to see the apps from this computer?");
+            waitTimer = new System.Windows.Forms.Timer();
+            waitTimer.Interval = 100; // Check every 100 milliseconds
+            waitTimer.Tick += WaitForButtonClick;
+        }
+        List <string> aboutinternet = ["internet", "net", "wifi"];
+        keyword = finder.FindSubstring(input.ToLower(), aboutinternet);
+        if (keyword != null)  
+        {
+            _keyword = "internet";
+            askedQuestion = true;
+            synthesizer.Speak("Would you like to see the network and Wi-Fi settings?");
+            waitTimer = new System.Windows.Forms.Timer();
+            waitTimer.Interval = 100; // Check every 100 milliseconds
+            waitTimer.Tick += WaitForButtonClick;
+        }
+        //bluetooth
+        List <string> aboutbluetooth = ["blueto"];
+        keyword = finder.FindSubstring(input.ToLower(), aboutbluetooth);
+        if (keyword != null)  
+        {
+            _keyword = "bluetooth";
+            askedQuestion = true;
+            synthesizer.Speak("Would you like to see the bluetooth settings?");
+            waitTimer = new System.Windows.Forms.Timer();
+            waitTimer.Interval = 100; // Check every 100 milliseconds
+            waitTimer.Tick += WaitForButtonClick;
+        }
 
         List<string> settingsKeywords = ["set", "chang", "deskto", "searc"];
         keyword = finder.FindSubstring(input.ToLower(), settingsKeywords);
         if (keyword != null)
         {
             synthesizer.Speak(
-                "Try to be more specific about what you want to change. For ex: too bright to change the brightness");
+                "Try to be more specific about what you want to change. For example: too bright to change the brightness");
             return;
         }
+        
         
         List<string> fileKeywords = ["deskt", "fil", "doc"];
         keyword = finder.FindSubstring(input.ToLower(), fileKeywords);
@@ -298,7 +338,6 @@ public partial class Form1 : Form
                     Console.WriteLine($"Error starting process for file {file.Name}");
                 }
             }
-
             return;
         }
         
@@ -315,180 +354,89 @@ public partial class Form1 : Form
             return;
         }
 
-        List<string> chromeKeywords = ["chrom", "googl", "inter", "browse", "net"];
+        List<string> chromeKeywords = ["chrom", "googl", "inter", "brows", "net"];
         keyword = finder.FindSubstring(input.ToLower(), chromeKeywords);
         if (keyword != null)
         {
-            const string appPath = @"C:\Program Files\Google\Chrome\Application\chrome.exe";
-            try
-            {
-                Process processChrome = new Process();
-                processChrome.StartInfo.FileName = appPath;
-                processChrome.StartInfo.UseShellExecute = true;
-                processChrome.Start();
-            }
-            catch
-            {
-                Console.WriteLine($"Error starting chrome process");
-                Installer chrome = new Installer("chrome");
-                chrome.Install();
-                try
-                {
-                    Process processChrome = new Process();
-                    processChrome.StartInfo.FileName = appPath;
-                    processChrome.StartInfo.UseShellExecute = true;
-                    processChrome.Start();
-                }
-                catch
-                {
-                    Console.WriteLine($"Error starting chrome process");
-                }
-            }
+            _keyword = "chrome";
+            askedQuestion = true;
+            synthesizer.Speak("Would you like to use Google Chrome?");
+            waitTimer = new System.Windows.Forms.Timer();
+            waitTimer.Interval = 100; // Check every 100 milliseconds
+            waitTimer.Tick += WaitForButtonClick;
         }
-        if (keyword == "facebook" || keyword == "fb")
+
+        List<string> fbKeywords = ["face", "fb"];
+        keyword = finder.FindSubstring(input.ToLower(), fbKeywords);
+        if (keyword != null)
         {
-            const string chromePath = @"C:\Program Files\Google\Chrome\Application\chrome.exe";
-            const string facebookUrl = "https://www.facebook.com";
-            try
-            {
-                Process process = new Process();
-                process.StartInfo.FileName = chromePath;
-                process.StartInfo.Arguments = facebookUrl;
-                process.StartInfo.UseShellExecute = true;
-                process.Start();
-            }
-            catch
-            {
-                Installer chrome = new Installer("chrome");
-                chrome.Install();
-                Process process = new Process();
-                process.StartInfo.FileName = chromePath;
-                process.StartInfo.Arguments = facebookUrl;
-                process.StartInfo.UseShellExecute = true;
-                process.Start();
-            }
+            _keyword = "facebook";
+            askedQuestion = true;
+            synthesizer.Speak("Would you like to open Facebook?");
+            waitTimer = new System.Windows.Forms.Timer();
+            waitTimer.Interval = 100; // Check every 100 milliseconds
+            waitTimer.Tick += WaitForButtonClick;
         }
-
-        if (keyword == "instagram" || keyword == "insta")
+            
+        List<string> instaKeywords = ["insta"];
+        keyword = finder.FindSubstring(input.ToLower(), instaKeywords);
+        if (keyword != null)
         {
-            const string chromePath = @"C:\Program Files\Google\Chrome\Application\chrome.exe";
-            const string instaUrl = "https://www.instagram.com";
-            try
-            {
-                Process process = new Process();
-                process.StartInfo.FileName = chromePath;
-                process.StartInfo.Arguments = instaUrl;
-                process.StartInfo.UseShellExecute = true;
-                process.Start();
-            }
-            catch
-            {
-                Installer chrome = new Installer("chrome");
-                chrome.Install();
-                Process process = new Process();
-                process.StartInfo.FileName = chromePath;
-                process.StartInfo.Arguments = instaUrl;
-                process.StartInfo.UseShellExecute = true;
-                process.Start();
-            }
-
-            return;
+            _keyword = "instagram";
+            askedQuestion = true;
+            synthesizer.Speak("Would you like to open Instagram?");
+            waitTimer = new System.Windows.Forms.Timer();
+            waitTimer.Interval = 100; // Check every 100 milliseconds
+            waitTimer.Tick += WaitForButtonClick;
         }
 
-        if (keyword == "youtube" || keyword == "yt")
+        List<string> ytKeywords = ["yout", "yt"];
+        keyword = finder.FindSubstring(input.ToLower(), ytKeywords);
+        if (keyword != null)
         {
-            const string chromePath = @"C:\Program Files\Google\Chrome\Application\chrome.exe";
-            const string ytUrl = "https://www.youtube.com";
-            try
-            {
-                Process process = new Process();
-                process.StartInfo.FileName = chromePath;
-                process.StartInfo.Arguments = ytUrl;
-                process.StartInfo.UseShellExecute = true;
-                process.Start();
-            }
-            catch
-            {
-                Installer chrome = new Installer("chrome");
-                chrome.Install();
-                Process process = new Process();
-                process.StartInfo.FileName = chromePath;
-                process.StartInfo.Arguments = ytUrl;
-                process.StartInfo.UseShellExecute = true;
-                process.Start();
-            }
-
-            return;
+            _keyword = "youtube";
+            askedQuestion = true;
+            synthesizer.Speak("Would you like to open Youtube?");
+            waitTimer = new System.Windows.Forms.Timer();
+            waitTimer.Interval = 100; // Check every 100 milliseconds
+            waitTimer.Tick += WaitForButtonClick;
         }
 
-        if (keyword == "spoti" || keyword == "musi")
+        List<string> spotKeywords = ["spot", "musi"];
+        keyword = finder.FindSubstring(input.ToLower(), spotKeywords);
+        if (keyword != null)
         {
-            string spotifyPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
-                @"Spotify\spotify.exe");
-            try
-            {
-                Process process = new Process();
-                process.StartInfo.FileName = spotifyPath;
-                process.StartInfo.UseShellExecute = true;
-                process.Start();
-            }
-            catch
-            {
-                Installer spotify = new Installer("spotify");
-                spotify.Install();
-                Process process = new Process();
-                process.StartInfo.FileName = spotifyPath;
-                process.StartInfo.UseShellExecute = true;
-                process.Start();
-            }
+            _keyword = "spotify";
+            askedQuestion = true;
+            synthesizer.Speak("Would you like to open Spotify?");
+            waitTimer = new System.Windows.Forms.Timer();
+            waitTimer.Interval = 100; // Check every 100 milliseconds
+            waitTimer.Tick += WaitForButtonClick;
         }
-
-        if (keyword == "zoo")
+        List<string> zoomKeywords = ["zoo"];
+        keyword = finder.FindSubstring(input.ToLower(), zoomKeywords);
+        if (keyword != null)
         {
-            string zoomPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
-                @"Zoom\bin\Zoom.exe");
-            try
-            {
-                Process process = new Process();
-                process.StartInfo.FileName = zoomPath;
-                process.StartInfo.UseShellExecute = true;
-                process.Start();
-            }
-            catch
-            {
-                Installer spotify = new Installer("zoom");
-                spotify.Install();
-                Process process = new Process();
-                process.StartInfo.FileName = zoomPath;
-                process.StartInfo.UseShellExecute = true;
-                process.Start();
-            }
+            _keyword = "zoom";
+            askedQuestion = true;
+            synthesizer.Speak("Would you like to open Zoom?");
+            waitTimer = new System.Windows.Forms.Timer();
+            waitTimer.Interval = 100; // Check every 100 milliseconds
+            waitTimer.Tick += WaitForButtonClick;
         }
-
-        if (keyword == "chat" || keyword == "gpt")
+        List<string> chatKeywords = ["chat", "gpt"];
+        keyword = finder.FindSubstring(input.ToLower(), chatKeywords);
+        if (keyword != null)
         {
-            const string chromePath = @"C:\Program Files\Google\Chrome\Application\chrome.exe";
-            const string chatUrl = "https://www.chatgpt.com";
-            try
-            {
-                Process process = new Process();
-                process.StartInfo.FileName = chromePath;
-                process.StartInfo.Arguments = chatUrl;
-                process.StartInfo.UseShellExecute = true;
-                process.Start();
-            }
-            catch
-            {
-                Installer chrome = new Installer("chrome");
-                chrome.Install();
-                Process process = new Process();
-                process.StartInfo.FileName = chromePath;
-                process.StartInfo.Arguments = chatUrl;
-                process.StartInfo.UseShellExecute = true;
-                process.Start();
-            }
-            return;
+            _keyword = "chatgpt";
+            askedQuestion = true;
+            synthesizer.Speak("Would you like to open ChatGPT?");
+            waitTimer = new System.Windows.Forms.Timer();
+            waitTimer.Interval = 100; // Check every 100 milliseconds
+            waitTimer.Tick += WaitForButtonClick;
         }
+        
+        
     }
     
         
@@ -546,6 +494,7 @@ public partial class Form1 : Form
                     "Choose the language you want from this menu. If you don't have it use the plus button to download the pack for it.");
                 buttonClicked = true;
                 waitTimer.Stop(); // Stop the timer once the button is clicked
+                return;
             }
 
             if (_keyword == "about")
@@ -556,11 +505,239 @@ public partial class Form1 : Form
                 process.Start();
                 Thread.Sleep(2000);
                 synthesizer.Volume = 100;
-                synthesizer.Speak("You can see the details about pc here");
+                synthesizer.Speak("You can see the details about the pc here");
                 buttonClicked = true;
                 waitTimer.Stop(); // Stop the timer once the button is clicked
+                return;
             }
-
+            if (_keyword == "personalization")
+            {
+                Process process = new Process();
+                process.StartInfo.FileName = "ms-settings:personalization";
+                process.StartInfo.UseShellExecute = true;
+                process.Start();
+                Thread.Sleep(2000);
+                synthesizer.Volume = 100;
+                synthesizer.Speak("You can see the details about personalization here");
+                buttonClicked = true;
+                waitTimer.Stop(); // Stop the timer once the button is clicked
+                return;
+            }
+            if (_keyword == "apps")
+            {
+                Process process = new Process();
+                process.StartInfo.FileName = "ms-settings:apps";
+                process.StartInfo.UseShellExecute = true;
+                process.Start();
+                Thread.Sleep(2000);
+                synthesizer.Volume = 100;
+                synthesizer.Speak("You can see the details about applications here");
+                buttonClicked = true;
+                waitTimer.Stop(); // Stop the timer once the button is clicked
+                return;
+            }
+            if (_keyword == "internet")
+            {
+                Process process = new Process();
+                process.StartInfo.FileName = "ms-settings:network";
+                process.StartInfo.UseShellExecute = true;
+                process.Start();
+                Thread.Sleep(2000);
+                synthesizer.Volume = 100;
+                synthesizer.Speak("You can see the details about internet here");
+                buttonClicked = true;
+                waitTimer.Stop(); // Stop the timer once the button is clicked
+                return;
+            }
+            if (_keyword == "bluetooth")
+            {
+                Process process = new Process();
+                process.StartInfo.FileName = "ms-settings:bluetooth";
+                process.StartInfo.UseShellExecute = true;
+                process.Start();
+                Thread.Sleep(2000);
+                synthesizer.Volume = 100;
+                synthesizer.Speak("You can see the details about bluetooth here");
+                buttonClicked = true;
+                waitTimer.Stop(); // Stop the timer once the button is clicked
+                return;
+            }
+            if (_keyword == "chrome")
+            {
+                const string appPath = @"C:\Program Files\Google\Chrome\Application\chrome.exe";
+                try
+                {
+                    Process processChrome = new Process();
+                    processChrome.StartInfo.FileName = appPath;
+                    processChrome.StartInfo.UseShellExecute = true;
+                    processChrome.Start();
+                }
+                catch
+                {
+                    synthesizer.Speak("Google Chrome is not installed on this device. I will install it for you!");
+                    Installer chrome = new Installer("chrome");
+                    chrome.Install();
+                    try
+                    {
+                        Process processChrome = new Process();
+                        processChrome.StartInfo.FileName = appPath;
+                        processChrome.StartInfo.UseShellExecute = true;
+                        processChrome.Start();
+                    }
+                    catch
+                    {
+                        Console.WriteLine($"Error starting chrome process");
+                    }
+                }
+                return;
+            }
+            if (_keyword == "facebook")
+            {
+                const string chromePath = @"C:\Program Files\Google\Chrome\Application\chrome.exe";
+                const string facebookUrl = "https://www.facebook.com";
+                try
+                {
+                    Process process = new Process();
+                    process.StartInfo.FileName = chromePath;
+                    process.StartInfo.Arguments = facebookUrl;
+                    process.StartInfo.UseShellExecute = true;
+                    process.Start();
+                }
+                catch
+                {
+                    synthesizer.Speak("Google Chrome is not installed on this device. I will install it for you!");
+                    Installer chrome = new Installer("chrome");
+                    chrome.Install();
+                    Process process = new Process();
+                    process.StartInfo.FileName = chromePath;
+                    process.StartInfo.Arguments = facebookUrl;
+                    process.StartInfo.UseShellExecute = true;
+                    process.Start();
+                }
+                return;
+            }
+            if (_keyword == "instagram")
+            {
+                const string chromePath = @"C:\Program Files\Google\Chrome\Application\chrome.exe";
+                const string instaUrl = "https://www.instagram.com";
+                try
+                {
+                    Process process = new Process();
+                    process.StartInfo.FileName = chromePath;
+                    process.StartInfo.Arguments = instaUrl;
+                    process.StartInfo.UseShellExecute = true;
+                    process.Start();
+                }
+                catch
+                {
+                    synthesizer.Speak("Google Chrome is not installed on this device. I will install it for you!");
+                    Installer chrome = new Installer("chrome");
+                    chrome.Install();
+                    Process process = new Process();
+                    process.StartInfo.FileName = chromePath;
+                    process.StartInfo.Arguments = instaUrl;
+                    process.StartInfo.UseShellExecute = true;
+                    process.Start();
+                }
+                return;
+            }
+            if (_keyword == "youtube")
+            {
+                const string chromePath = @"C:\Program Files\Google\Chrome\Application\chrome.exe";
+                const string ytUrl = "https://www.youtube.com";
+                try
+                {
+                    Process process = new Process();
+                    process.StartInfo.FileName = chromePath;
+                    process.StartInfo.Arguments = ytUrl;
+                    process.StartInfo.UseShellExecute = true;
+                    process.Start();
+                }
+                catch
+                {
+                    synthesizer.Speak("Google Chrome is not installed on this device. I will install it for you!");
+                    Installer chrome = new Installer("chrome");
+                    chrome.Install();
+                    Process process = new Process();
+                    process.StartInfo.FileName = chromePath;
+                    process.StartInfo.Arguments = ytUrl;
+                    process.StartInfo.UseShellExecute = true;
+                    process.Start();
+                }
+                return;
+            }
+            if (_keyword == "chatgpt")
+            {
+                const string chromePath = @"C:\Program Files\Google\Chrome\Application\chrome.exe";
+                const string chatUrl = "https://www.chatgpt.com";
+                try
+                {
+                    Process process = new Process();
+                    process.StartInfo.FileName = chromePath;
+                    process.StartInfo.Arguments = chatUrl;
+                    process.StartInfo.UseShellExecute = true;
+                    process.Start();
+                }
+                catch
+                {
+                    synthesizer.Speak("Google Chrome is not installed on this device. I will install it for you!");
+                    Installer chrome = new Installer("chrome");
+                    chrome.Install();
+                    Process process = new Process();
+                    process.StartInfo.FileName = chromePath;
+                    process.StartInfo.Arguments = chatUrl;
+                    process.StartInfo.UseShellExecute = true;
+                    process.Start();
+                }
+                return;
+            }
+            if (_keyword == "zoom")
+            {
+                string zoomPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+                                  @"Zoom\bin\Zoom.exe");
+                try
+                {
+                    Process process = new Process();
+                    process.StartInfo.FileName = zoomPath;
+                    process.StartInfo.UseShellExecute = true;
+                    process.Start();
+                }
+                catch
+                {
+                    synthesizer.Speak("Zoom is not installed on this device. I will install it for you!");
+                    Installer spotify = new Installer("zoom");
+                    spotify.Install();
+                    Process process = new Process();
+                    process.StartInfo.FileName = zoomPath;
+                    process.StartInfo.UseShellExecute = true;
+                    process.Start();
+                }
+                return;
+            }
+            if (_keyword == "spotify")
+            {
+                Console.WriteLine("spotify");
+                string spotifyPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+                    @"Spotify\spotify.exe");
+                try
+                {
+                    Process process = new Process();
+                    process.StartInfo.FileName = spotifyPath;
+                    process.StartInfo.UseShellExecute = true;
+                    process.Start();
+                }
+                catch
+                {
+                    synthesizer.Speak("Zoom is not installed on this device. I will install it for you!");
+                    Installer spotify = new Installer("spotify");
+                    spotify.Install();
+                    Process process = new Process();
+                    process.StartInfo.FileName = spotifyPath;
+                    process.StartInfo.UseShellExecute = true;
+                    process.Start();
+                }
+                return;
+            }
             askedQuestion = false;
         }
     }
