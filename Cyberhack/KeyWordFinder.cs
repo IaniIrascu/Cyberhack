@@ -4,9 +4,9 @@ namespace Cyberhack;
 using static Cyberhack.Form1;
 public class KeyWordFinder
 {
-    public String FindSubstring(String input, List<String> keyWords)
+    public string FindSubstring(string input, List<string> keyWords)
     {
-        foreach (String keyWord in keyWords)
+        foreach (string keyWord in keyWords)
         {
             if (input.Contains(keyWord))
             {

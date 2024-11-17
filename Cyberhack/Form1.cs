@@ -200,11 +200,11 @@ public partial class Form1 : Form
         
 
         // Cautare keyword principal
-        List<string> brightnessKeywords = ["brightness", "brighter", "dimmer", "bright"];
+        List<string> brightnessKeywords = ["dim", "brigh"];
         string keyword = finder.FindSubstring(input.ToLower(), brightnessKeywords);
-        if (keyword == "brightness" || keyword == "brighter" || keyword == "dimmer" || keyword == "bright")
+        if (keyword != null)
         {
-            _keyword = keyword;
+            _keyword = "brightness";
             askedQuestion = true;
             synthesizer.Speak("Would you like to change the brightness?");
             waitTimer = new System.Windows.Forms.Timer();
@@ -214,11 +214,11 @@ public partial class Form1 : Form
 
         List<string> soundKeywords = ["sound", "loud", "quiet", "volume"];
         keyword = finder.FindSubstring(input.ToLower(), soundKeywords);
-        if (keyword == "sound" || keyword == "loud" || keyword == "quiet" || keyword == "volume")
+        if (keyword != null)
         {
-            _keyword = keyword;
+            _keyword = "volume";
             askedQuestion = true;
-            synthesizer.Speak("Would you like to change the sound?");
+            synthesizer.Speak("Would you like to change the volume?");
             waitTimer = new System.Windows.Forms.Timer();
             waitTimer.Interval = 100; // Check every 100 milliseconds
             waitTimer.Tick += WaitForButtonClick;
@@ -226,9 +226,9 @@ public partial class Form1 : Form
 
         List<string> languageKeywords = ["keyboard", "language"];
         keyword = finder.FindSubstring(input.ToLower(), languageKeywords);
-        if (keyword == "keyboard" || keyword == "language")
+        if (keyword != null)
         {
-            _keyword = keyword;
+            _keyword = "keyboard";
             askedQuestion = true;
             synthesizer.Speak("Would you like to change the language?");
             waitTimer = new System.Windows.Forms.Timer();
@@ -236,11 +236,11 @@ public partial class Form1 : Form
             waitTimer.Tick += WaitForButtonClick;
         }
 
-        List<string> aboutKeywords = ["about", "details", "pc", "laptop", "windows"];
+        List<string> aboutKeywords = ["abou", "detai", "pc", "lapto", "window"];
         keyword = finder.FindSubstring(input.ToLower(), aboutKeywords);
-        if (keyword == "about" || keyword == "pc" || keyword == "laptop" || keyword == "windows")
+        if (keyword != null)
         {
-            _keyword = keyword;
+            _keyword = "about";
             askedQuestion = true;
             synthesizer.Speak("Would you like to see details about this computer?");
             waitTimer = new System.Windows.Forms.Timer();
@@ -248,17 +248,18 @@ public partial class Form1 : Form
             waitTimer.Tick += WaitForButtonClick;
         }
 
-        List<string> settingsKeywords = ["settings", "setting", "set", "change", "desktop", "search"];
+        List<string> settingsKeywords = ["set", "chang", "deskto", "searc"];
         keyword = finder.FindSubstring(input.ToLower(), settingsKeywords);
-        if (keyword == "settings" || keyword == "setting" || keyword == "set" || keyword == "change")
+        if (keyword != null)
         {
             synthesizer.Speak(
                 "Try to be more specific about what you want to change. For ex: too bright to change the brightness");
             return;
         }
         
-        keyword = finder.FindSubstring(input.ToLower(), words);
-        if (keyword == "desktop" || keyword == "search")
+        List<string> fileKeywords = ["deskt", "fil", "doc"];
+        keyword = finder.FindSubstring(input.ToLower(), fileKeywords);
+        if (keyword != null)
         {
             IEnumerable<FileInfo> list =
                 new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory)).GetFiles()
@@ -267,7 +268,6 @@ public partial class Form1 : Form
                     .Distinct();
             string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 
-            Console.WriteLine(input);
             foreach (var file in list)
             {
                 String filename = file.Name.ToLower();
@@ -301,8 +301,10 @@ public partial class Form1 : Form
 
             return;
         }
-
-        if (keyword == "mail")
+        
+        List<string> mailKeywords = ["mai", "emai", "gmai", "yaho"];
+        keyword = finder.FindSubstring(input.ToLower(), mailKeywords);
+        if (keyword != null)
         {
             // Lansez aplicatia de mail.
             Process processMail = new Process();
@@ -313,7 +315,9 @@ public partial class Form1 : Form
             return;
         }
 
-        if (keyword == "chrome" || keyword == "google" || keyword == "internet")
+        List<string> chromeKeywords = ["chrom", "googl", "inter", "browse", "net"];
+        keyword = finder.FindSubstring(input.ToLower(), chromeKeywords);
+        if (keyword != null)
         {
             const string appPath = @"C:\Program Files\Google\Chrome\Application\chrome.exe";
             try
@@ -341,7 +345,7 @@ public partial class Form1 : Form
                 }
             }
         }
-        if (keyword == "facebook")
+        if (keyword == "facebook" || keyword == "fb")
         {
             const string chromePath = @"C:\Program Files\Google\Chrome\Application\chrome.exe";
             const string facebookUrl = "https://www.facebook.com";
@@ -391,7 +395,7 @@ public partial class Form1 : Form
             return;
         }
 
-        if (keyword == "youtube")
+        if (keyword == "youtube" || keyword == "yt")
         {
             const string chromePath = @"C:\Program Files\Google\Chrome\Application\chrome.exe";
             const string ytUrl = "https://www.youtube.com";
@@ -417,7 +421,7 @@ public partial class Form1 : Form
             return;
         }
 
-        if (keyword == "spotify")
+        if (keyword == "spoti" || keyword == "musi")
         {
             string spotifyPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
                 @"Spotify\spotify.exe");
@@ -439,7 +443,7 @@ public partial class Form1 : Form
             }
         }
 
-        if (keyword == "zoom")
+        if (keyword == "zoo")
         {
             string zoomPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
                 @"Zoom\bin\Zoom.exe");
@@ -461,7 +465,7 @@ public partial class Form1 : Form
             }
         }
 
-        if (keyword == "chatgpt")
+        if (keyword == "chat" || keyword == "gpt")
         {
             const string chromePath = @"C:\Program Files\Google\Chrome\Application\chrome.exe";
             const string chatUrl = "https://www.chatgpt.com";
@@ -504,10 +508,8 @@ public partial class Form1 : Form
     {
         if (askedQuestion == true)
         {
-            Console.WriteLine("intra");
-            if (_keyword == "brightness" || _keyword == "brighter" || _keyword == "dimmer" || _keyword == "bright")
+            if (_keyword == "brightness")
             {
-                Console.WriteLine(_keyword);
                 Process process = new Process();
                 process.StartInfo.FileName = "ms-settings:display";
                 process.StartInfo.UseShellExecute = true;
@@ -519,7 +521,7 @@ public partial class Form1 : Form
                 waitTimer.Stop(); // Stop the timer once the button is clicked
             }
 
-            if (_keyword == "sound" || _keyword == "loud" || _keyword == "quiet" || _keyword == "volume")
+            if (_keyword == "volume")
             {
                 Process process = new Process();
                 process.StartInfo.FileName = "ms-settings:sound";
@@ -532,7 +534,7 @@ public partial class Form1 : Form
                 waitTimer.Stop(); // Stop the timer once the button is clicked
             }
 
-            if (_keyword == "keyboard" || _keyword == "language")
+            if (_keyword == "keyboard")
             {
                 Process process = new Process();
                 process.StartInfo.FileName = "ms-settings:keyboard";
@@ -546,7 +548,7 @@ public partial class Form1 : Form
                 waitTimer.Stop(); // Stop the timer once the button is clicked
             }
 
-            if (_keyword == "about" || _keyword == "pc" || _keyword == "laptop" || _keyword == "windows")
+            if (_keyword == "about")
             {
                 Process process = new Process();
                 process.StartInfo.FileName = "ms-settings:about";
