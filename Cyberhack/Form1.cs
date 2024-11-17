@@ -69,22 +69,19 @@ public partial class Form1 : Form
     {
         // Set modern font
         Font modernFont = new Font("Georgia", 12, FontStyle.Regular);
+        synthesizer.Speak(@"Hello" + Environment.UserName + ". Welcome to ConfigAssist!");
 
         // Style Button1 (Brighter)
         button1.Font = modernFont;
         button1.FlatStyle = FlatStyle.Flat;
-        button1.BackColor = Color.FromArgb(238, 238, 238);
         button1.FlatAppearance.BorderSize = 0;
-        button1.ForeColor = Color.White;
         button1.TextAlign = ContentAlignment.MiddleCenter;
         button1.Text = "Brighter ☀";
 
         // Style Button2 (Dimmer)
         button2.Font = modernFont;
         button2.FlatStyle = FlatStyle.Flat;
-        button1.BackColor = Color.FromArgb(57, 62, 70);
         button2.FlatAppearance.BorderSize = 0;
-        button2.ForeColor = Color.White;
         button2.TextAlign = ContentAlignment.MiddleCenter;
         button2.Text = "Dimmer 🌙";
 
@@ -254,7 +251,7 @@ public partial class Form1 : Form
             waitTimer.Tick += WaitForButtonClick;
         }
 
-        List <string> aboutApps = ["app"];
+        List <string> aboutApps = ["apps", "appl"];
         keyword = finder.FindSubstring(input.ToLower(), aboutApps);
         if (keyword != null)
         {
