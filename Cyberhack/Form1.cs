@@ -16,7 +16,32 @@ using static WindowsSettingsBrightnessController;
 
 public partial class Form1 : Form
 {
-    
+    private Boolean isSpeaking = false;
+    // Partea de vorbire conform track-barului
+    // Metoda pentru a vorbi cu ajustarea dinamică a volumului
+    private void StartSpeakingWithVolumeChange(string text)
+    {
+        // impart textul in cuvinte.
+        string[] words = text.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+        List<string> sentenceParts = new List<string>();
+
+        // creez fragmente de text mai mici.
+        foreach (var word in words)
+        {
+            string currentFragment = string.Join(" ", sentenceParts) + " " + word;
+            sentenceParts.Add(currentFragment);
+
+            // După fiecare cuvant, setez volumul si ii spun ,, robotului" as vorbeasca.
+            synthesizer.Volume = trackBar1.Value;
+            synthesizer.SpeakAsync(currentFragment);
+        }
+    }
+
+    // Eveniment care semnalează finalizarea vorbirii
+    private void Synthesizer_SpeakCompleted(object sender, SpeakCompletedEventArgs e)
+    {
+        isSpeaking = false; // Vorbirea s-a încheiat
+    }
     private System.Windows.Forms.Timer batteryTimer;
 
     private void batteryTimer_Tick(object? sender, EventArgs e)
@@ -115,6 +140,7 @@ public partial class Form1 : Form
 
         // Style TextBox1 (Input)
         textBox1.Font = modernFont;
+        label1.Font = modernFont;
         textBox1.BackColor = Color.FromArgb(238, 238, 238);
         textBox1.ForeColor = Color.FromArgb(57, 62, 70);
         textBox1.Text = "Type your query here...";
@@ -128,6 +154,9 @@ public partial class Form1 : Form
         textBox1.Anchor = AnchorStyles.None;
         button4.Anchor = AnchorStyles.None;
         button5.Anchor = AnchorStyles.None;
+        trackBar1.Anchor = AnchorStyles.None;
+        label1.Anchor = AnchorStyles.None;
+        pictureBox1.Anchor = AnchorStyles.None;
     }
 
 
@@ -183,7 +212,7 @@ public partial class Form1 : Form
 
     private void button3_Click(object sender, EventArgs e)
     {
-        synthesizer.Volume = 100;
+        synthesizer.Volume = trackBar1.Value * 10;
         string input = textBox1.Text.ToLower();
 
         // creez instanta si caut substringurile.
@@ -475,7 +504,7 @@ public partial class Form1 : Form
                 process.StartInfo.UseShellExecute = true;
                 process.Start();
                 Thread.Sleep(2000);
-                synthesizer.Volume = 100;
+                synthesizer.Volume = trackBar1.Value * 10;
                 synthesizer.Speak("In order to change the brightness use the slider in the top of the window.");
                 buttonClicked = true;
                 waitTimer.Stop(); // Stop the timer once the button is clicked
@@ -488,7 +517,7 @@ public partial class Form1 : Form
                 process.StartInfo.UseShellExecute = true;
                 process.Start();
                 Thread.Sleep(2000);
-                synthesizer.Volume = 100;
+                synthesizer.Volume = trackBar1.Value * 10;
                 synthesizer.Speak("In order to change the sound use the slider called volume.");
                 buttonClicked = true;
                 waitTimer.Stop(); // Stop the timer once the button is clicked
@@ -501,7 +530,7 @@ public partial class Form1 : Form
                 process.StartInfo.UseShellExecute = true;
                 process.Start();
                 Thread.Sleep(2000);
-                synthesizer.Volume = 100;
+                synthesizer.Volume = trackBar1.Value * 10;
                 synthesizer.Speak(
                     "Choose the language you want from this menu. If you don't have it use the plus button to download the pack for it.");
                 buttonClicked = true;
@@ -516,7 +545,7 @@ public partial class Form1 : Form
                 process.StartInfo.UseShellExecute = true;
                 process.Start();
                 Thread.Sleep(2000);
-                synthesizer.Volume = 100;
+                synthesizer.Volume = trackBar1.Value * 10;
                 synthesizer.Speak("You can see the details about the pc here");
                 buttonClicked = true;
                 waitTimer.Stop(); // Stop the timer once the button is clicked
@@ -529,7 +558,7 @@ public partial class Form1 : Form
                 process.StartInfo.UseShellExecute = true;
                 process.Start();
                 Thread.Sleep(2000);
-                synthesizer.Volume = 100;
+                synthesizer.Volume = trackBar1.Value * 10;
                 synthesizer.Speak("You can see the details about personalization here");
                 buttonClicked = true;
                 waitTimer.Stop(); // Stop the timer once the button is clicked
@@ -542,7 +571,7 @@ public partial class Form1 : Form
                 process.StartInfo.UseShellExecute = true;
                 process.Start();
                 Thread.Sleep(2000);
-                synthesizer.Volume = 100;
+                synthesizer.Volume = trackBar1.Value * 10;
                 synthesizer.Speak("You can see the details about applications here");
                 buttonClicked = true;
                 waitTimer.Stop(); // Stop the timer once the button is clicked
@@ -555,7 +584,7 @@ public partial class Form1 : Form
                 process.StartInfo.UseShellExecute = true;
                 process.Start();
                 Thread.Sleep(2000);
-                synthesizer.Volume = 100;
+                synthesizer.Volume = trackBar1.Value * 10;
                 synthesizer.Speak("You can see the details about internet here");
                 buttonClicked = true;
                 waitTimer.Stop(); // Stop the timer once the button is clicked
@@ -568,7 +597,7 @@ public partial class Form1 : Form
                 process.StartInfo.UseShellExecute = true;
                 process.Start();
                 Thread.Sleep(2000);
-                synthesizer.Volume = 100;
+                synthesizer.Volume = trackBar1.Value * 10;
                 synthesizer.Speak("You can see the details about bluetooth here");
                 buttonClicked = true;
                 waitTimer.Stop(); // Stop the timer once the button is clicked
@@ -808,5 +837,9 @@ public partial class Form1 : Form
     void label1_Click(object sender, EventArgs e)
     {
 
+    }
+    private void trackBar1_Scroll(object sender, EventArgs e)
+    {
+        synthesizer.Volume = trackBar1.Value * 10;
     }
 }
