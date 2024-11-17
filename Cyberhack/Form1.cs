@@ -16,7 +16,7 @@ using static WindowsSettingsBrightnessController;
 
 public partial class Form1 : Form
 {
-
+    
     private System.Windows.Forms.Timer batteryTimer;
 
     private void batteryTimer_Tick(object? sender, EventArgs e)
@@ -60,6 +60,8 @@ public partial class Form1 : Form
     }
 
     private String _keyword = null;
+    private String _input = null;
+
     private bool buttonClicked = false;
     private System.Windows.Forms.Timer waitTimer;
     private bool askedQuestion = false;
@@ -69,7 +71,6 @@ public partial class Form1 : Form
     {
         // Set modern font
         Font modernFont = new Font("Georgia", 12, FontStyle.Regular);
-
         // Style Button1 (Brighter)
         button1.Font = modernFont;
         button1.FlatStyle = FlatStyle.Flat;
@@ -152,9 +153,7 @@ public partial class Form1 : Form
             textBox1.ForeColor = Color.Gray;
         }
     }
-
-
-
+    
     
     private void textBox1_KeyDown(object sender, KeyEventArgs e)
     {
@@ -197,7 +196,7 @@ public partial class Form1 : Form
             "whatsapp", "facebook", "desktop", "instagram", "chrome", "settings",
             "setting", "set", "change", "background", "word", "excel", "powerpoint", "gallery",
             "brightness", "files", "pictures", "documents", "spotify", "music", "internet",
-            "youtube", "zoom", "chatgpt", "bright", "search"
+            "youtube", "zoom", "chatgpt", "bright", "search", "mail", "personalization", 
         ];
         
 
@@ -249,7 +248,68 @@ public partial class Form1 : Form
             waitTimer.Interval = 100; // Check every 100 milliseconds
             waitTimer.Tick += WaitForButtonClick;
         }
-
+        //personalization
+        List <string> aboutPersonalizationKeywords = ["theme", "personalization"];
+        keyword = finder.FindSubstring(input.ToLower(), aboutPersonalizationKeywords);
+        if (keyword == "personalization" || keyword == "theme")
+        {
+            _keyword = keyword;
+            askedQuestion = true;
+            synthesizer.Speak("Would you like to see personalization about this computer?");
+            waitTimer = new System.Windows.Forms.Timer();
+            waitTimer.Interval = 100; // Check every 100 milliseconds
+            waitTimer.Tick += WaitForButtonClick;
+        }
+        //apps
+        List <string> aboutApps = ["app"];
+        keyword = finder.FindSubstring(input.ToLower(), aboutApps);
+        if (keyword == "app")
+        {
+            _keyword = keyword;
+            askedQuestion = true;
+            synthesizer.Speak("Would you like to see the apps from this computer?");
+            waitTimer = new System.Windows.Forms.Timer();
+            waitTimer.Interval = 100; // Check every 100 milliseconds
+            waitTimer.Tick += WaitForButtonClick;
+        }
+        //internet
+        List <string> aboutinternet = ["internet", "network", "wifi"];
+        keyword = finder.FindSubstring(input.ToLower(), aboutinternet);
+        if (keyword == "internet" || keyword == "network" || keyword == "wifi")  
+        {
+            _keyword = keyword;
+            askedQuestion = true;
+            synthesizer.Speak("Would you like to see the internet settings?");
+            waitTimer = new System.Windows.Forms.Timer();
+            waitTimer.Interval = 100; // Check every 100 milliseconds
+            waitTimer.Tick += WaitForButtonClick;
+        }
+        //bluetooth
+        List <string> aboutbluetooth = ["bluetooth"];
+        keyword = finder.FindSubstring(input.ToLower(), aboutbluetooth);
+        if (keyword == "bluetooth")  
+        {
+            _keyword = keyword;
+            askedQuestion = true;
+            synthesizer.Speak("Would you like to see the bluetooth settings?");
+            waitTimer = new System.Windows.Forms.Timer();
+            waitTimer.Interval = 100; // Check every 100 milliseconds
+            waitTimer.Tick += WaitForButtonClick;
+        }
+        //print
+        List <string> aboutprint = ["print"];
+        keyword = finder.FindSubstring(input.ToLower(), aboutprint);
+        if (keyword == "print")  
+        {
+            _keyword = keyword;
+            _input = input;
+            askedQuestion = true;
+            synthesizer.Speak("Would you like to print this document?");
+            waitTimer = new System.Windows.Forms.Timer();
+            waitTimer.Interval = 100; // Check every 100 milliseconds
+            waitTimer.Tick += WaitForButtonClick;
+            
+        }
         List<string> settingsKeywords = ["settings", "setting", "set", "change", "desktop", "search"];
         keyword = finder.FindSubstring(input.ToLower(), settingsKeywords);
         if (keyword == "settings" || keyword == "setting" || keyword == "set" || keyword == "change")
@@ -268,8 +328,6 @@ public partial class Form1 : Form
                         Environment.GetFolderPath(Environment.SpecialFolder.CommonDesktopDirectory)).GetFiles())
                     .Distinct();
             string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-
-            Console.WriteLine(input);
             foreach (var file in list)
             {
                 String filename = file.Name.ToLower();
@@ -315,7 +373,7 @@ public partial class Form1 : Form
             return;
         }
 
-        if (keyword == "chrome" || keyword == "google" || keyword == "internet")
+        if (keyword == "chrome" || keyword == "google")
         {
             const string appPath = @"C:\Program Files\Google\Chrome\Application\chrome.exe";
             try
@@ -506,7 +564,6 @@ public partial class Form1 : Form
     {
         if (askedQuestion == true)
         {
-            Console.WriteLine("intra");
             if (_keyword == "brightness" || _keyword == "brighter" || _keyword == "dimmer" || _keyword == "bright")
             {
                 Console.WriteLine(_keyword);
@@ -560,7 +617,97 @@ public partial class Form1 : Form
                 buttonClicked = true;
                 waitTimer.Stop(); // Stop the timer once the button is clicked
             }
+            //personalizat
+            if (_keyword == "personalization" || _keyword == "theme")
+            {
+                Process process = new Process();
+                process.StartInfo.FileName = "ms-settings:personalization";
+                process.StartInfo.UseShellExecute = true;
+                process.Start();
+                Thread.Sleep(2000);
+                synthesizer.Volume = 100;
+                synthesizer.Speak("You can see the details about personalization here");
+                buttonClicked = true;
+                waitTimer.Stop(); // Stop the timer once the button is clicked
+            }
+            //apps
+            if (_keyword == "apps" || _keyword == "application" || _keyword == "applications")
+            {
+                Process process = new Process();
+                process.StartInfo.FileName = "ms-settings:apps";
+                process.StartInfo.UseShellExecute = true;
+                process.Start();
+                Thread.Sleep(2000);
+                synthesizer.Volume = 100;
+                synthesizer.Speak("You can see the details about applications here");
+                buttonClicked = true;
+                waitTimer.Stop(); // Stop the timer once the button is clicked
+            }
+            //internet
+            if (_keyword == "internet" || _keyword == "network" || _keyword == "wifi")
+            {
+                Process process = new Process();
+                process.StartInfo.FileName = "ms-settings:network";
+                process.StartInfo.UseShellExecute = true;
+                process.Start();
+                Thread.Sleep(2000);
+                synthesizer.Volume = 100;
+                synthesizer.Speak("You can see the details about internet here");
+                buttonClicked = true;
+                waitTimer.Stop(); // Stop the timer once the button is clicked
+            }
+            //bluetooth
+            if (_keyword == "bluetooth")
+            {
+                Process process = new Process();
+                process.StartInfo.FileName = "ms-settings:bluetooth";
+                process.StartInfo.UseShellExecute = true;
+                process.Start();
+                Thread.Sleep(2000);
+                synthesizer.Volume = 100;
+                synthesizer.Speak("You can see the details about bluetooth here");
+                buttonClicked = true;
+                waitTimer.Stop(); // Stop the timer once the button is clicked
+            }
 
+            if (_keyword == "print")
+            {
+                Console.WriteLine(_input);
+                IEnumerable<FileInfo> list =
+                    new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory)).GetFiles()
+                        .Concat(new DirectoryInfo(
+                            Environment.GetFolderPath(Environment.SpecialFolder.CommonDesktopDirectory)).GetFiles())
+                        .Distinct();
+                string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                foreach (var file in list)
+                {
+                    String filename = file.Name.ToLower();
+                    String nameWithoutExt = Path.GetFileNameWithoutExtension(filename);
+                    try
+                    {
+                        if (_input.Contains("\"" + filename + "\"") ||
+                            (_input.Contains("\"" + nameWithoutExt + "\"") &&
+                             nameWithoutExt == Path.GetFileNameWithoutExtension(file.Name).ToLower()))
+                        {
+                            string filePath = Path.Combine(desktopPath, file.Name);
+
+                            Process process = new Process();
+                            process.StartInfo.FileName = filePath;
+                            process.StartInfo.Verb = "print"; // Automatically triggers printing
+                            process.StartInfo.UseShellExecute = true;
+                            process.Start();
+
+                            synthesizer.Speak($"Printing {file.Name}.");
+                            break;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        // Log or handle the error if needed
+                        synthesizer.Speak($"Error printing file {file.Name}: {ex.Message}");
+                    }
+                }
+            }
             askedQuestion = false;
         }
     }
