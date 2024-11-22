@@ -2,7 +2,7 @@
 
 ## Description
 
-ConfigAssist is a Windows-based personal assistant developed in C#. It responds to user commands to manage system settings, launch applications, and monitor battery status. Featuring a sleek interface with customizable rounded buttons and voice feedback, Cyberhack enhances productivity and simplifies everyday tasks for a seamless user experience.
+ConfigAssist is a Windows-based personal assistant developed in C#. It responds to user commands to manage system settings, launch applications, and monitor battery status. Featuring a sleek interface with customizable rounded buttons and voice feedback, ConfigAssist enhances productivity and simplifies everyday tasks for a seamless user experience.
 
 ## Main Features
 
